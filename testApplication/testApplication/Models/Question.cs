@@ -9,12 +9,12 @@ namespace testApplication.Model
 {
     public class Question
     {
-        public int QuestID { get; set; }
+        public int ID { get; set; }
         public string Quest { get; set; }
 
-        public Question (int questID, string question)
+        public Question (int id, string question)
         {
-            this.QuestID = questID;
+            this.ID = id;
             this.Quest = question;
         }
 
