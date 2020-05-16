@@ -119,11 +119,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
     <Compile Include="ViewModels\TeacherViewModel.cs" />
+
+    <Compile Include="Models\AccountLogin.cs" />
+    <Compile Include="Models\APIServices.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="ViewModels\QuestionViewModel.cs" />
+
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
