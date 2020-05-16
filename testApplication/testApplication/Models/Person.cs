@@ -8,32 +8,32 @@ namespace testApplication.Models
 {
    abstract public class Person
     {
-      private  string _FirstName;
-      private string _LastName;
-      private string _Email;
-      private string _PhonenNumber;
+      private  string firstName;
+      private string lastName;
+      private string email;
+      private string phoNum;
 
 
         public string FirstName
         {
-            get { return _FirstName; ; }
-            set { _FirstName = value; }
+            get { return firstName; ; }
+            set { firstName = value; }
         }
 
-        public string LastNam
+        public string LastName
         {
-            get { return _LastName; ; }
-            set { _LastName = value; }
+            get { return lastName; ; }
+            set { lastName = value; }
         }
         public string Email
         {
-            get { return _Email; ; }
-            set { _Email = value; }
+            get { return email; ; }
+            set { email = value; }
         }
-        public string PhonenNumber
+        public string PhoNumber
         {
-            get { return _PhonenNumber; ; }
-            set { _PhonenNumber = value; }
+            get { return phoNum; ; }
+            set { phoNum = value; }
         }
 
 

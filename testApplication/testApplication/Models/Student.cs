@@ -8,18 +8,18 @@ namespace testApplication.Models
 {
     class Student: Person
     {
-      public int _StudentId;
-      public string _Klass;
+      public int studentId;
+      public string studentClass;
        
-        public string Klass
+        public string StudentClass
         {
-            get { return _Klass; ; }
-            set { _Klass = value; }
+            get { return studentClass; ; }
+            set { studentClass = value; }
         }
         public int StudentId
         {
-            get { return _StudentId; }
-            set { _StudentId = value; }
+            get { return studentId; }
+            set { studentId = value; }
         }
     }
 
