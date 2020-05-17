@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Teacher Page" Height="178" Margin="539,0,0,0" Width="333" Click="Button_Click"/>
+        <Button Content="Teacher Page" Height="86" Margin="640,0,0,0" Width="219" Click="Button_Click"/>
     </Grid>
 </Page>
