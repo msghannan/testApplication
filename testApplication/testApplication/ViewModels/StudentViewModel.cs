@@ -15,15 +15,15 @@ namespace testApplication.ViewModels
 
         }
 
-        public static ShowMyInfo()
-        {
+        //public static ShowMyInfo()
+        //{
 
-        }
+        //}
 
-        public static string ShowMyResult()
-        {
+        //public static string ShowMyResult()
+        //{
 
-        }
+        //}
 
 
     }

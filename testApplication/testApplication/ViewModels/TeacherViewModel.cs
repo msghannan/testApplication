@@ -12,14 +12,14 @@ namespace testApplication.ViewModels
         {
            
         }
-        public static CreateExam()
-        {
+        //public static CreateExam()
+        //{
 
-        }
-        public static ShowStudentresult() 
-        {
+        //}
+        //public static ShowStudentresult() 
+        //{
 
-        }
+        //}
 
     }
 }
