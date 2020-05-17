@@ -10,6 +10,7 @@
 
     <Grid Margin="10,10,0,0" HorizontalAlignment="Left" Width="1270" Height="710" VerticalAlignment="Top">
 
+        
         <Grid x:Name="WelcomeTextGrid" Width="850" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0">
             <TextBlock x:Name="WelcomeTextGridTextBlock" Text="Välkommen till din sida!" FontSize="80" Margin="0"/>
         </Grid>
@@ -39,10 +40,12 @@
 
         </Grid>
 
+        
+        
+        
 
         <Grid x:Name="PersonInfoGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
             <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="SignOutButton_Click" HorizontalAlignment="Center"/>
-
         </Grid>
 
     </Grid>
