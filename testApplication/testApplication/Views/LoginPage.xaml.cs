@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,10 @@ namespace testApplication.Views
         public LoginPage()
         {
             this.InitializeComponent();
+            this.Vm = new LoginPageViewModel();
+        
         }
+
+        public LoginPageViewModel Vm { get; set; }
     }
 }
