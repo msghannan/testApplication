@@ -22,7 +22,7 @@
         <Grid x:Name="TeacherPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
 
             <Grid x:Name="TeacherPageChoisesButton" HorizontalAlignment="Center" VerticalAlignment="Top" Height="280" Width="600">
-                <Button x:Name="CreateTestButton" Content="Aktiva prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#7c21d9" Height="100" Width="200" Margin="100,0,0,0" VerticalAlignment="Top" Click="CreateTestButton_Click"/>
+                <Button x:Name="CreateTestButton" Content="Aktiva prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#7c21d9" Height="100" Width="200" Margin="100,0,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="MyStudentsButton" Content="Mina lärare" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="100" Width="200" Margin="323,0,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="MyInfoButton" Content="Mina uppgifter" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#f5a300" Height="100" Width="200" Margin="100,110,0,0" VerticalAlignment="Top"/>
                 <Button x:Name="ContactAdmin" Content="Hjälp / Kontakta admin" FontSize="18" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#000000" Height="100" Width="200" Margin="323,110,0,0" VerticalAlignment="Top"/>
