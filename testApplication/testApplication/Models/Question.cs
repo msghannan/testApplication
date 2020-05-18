@@ -12,15 +12,13 @@ namespace testApplication.Model
         public int ID { get; set; }
         public string Quest { get; set; }
 
+        public List<string> ChoiseList = new List<string>();
+
         public Question (int id, string question)
         {
             this.ID = id;
             this.Quest = question;
         }
 
-        public static implicit operator ObservableCollection<object>(Question v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
