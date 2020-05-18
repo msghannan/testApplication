@@ -36,5 +36,20 @@ namespace testApplication.Views
         {
             this.Frame.Navigate(typeof(CreateTestPage));
         }
+
+        private void StudentsResultsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(StudentsResultsPage));
+        }
+
+        private void MyStudentsButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MyStudentsPage));
+        }
+
+        private void ContactAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ContactAdminPage));
+        }
     }
 }

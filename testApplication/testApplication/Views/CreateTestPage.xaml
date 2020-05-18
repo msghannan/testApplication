@@ -28,7 +28,7 @@
 
 
         <Grid x:Name="CreateTestPageButtonsGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
-            <Button x:Name="SignOutButton" Content="Tillbaka" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="SignOutButton_Click" HorizontalAlignment="Center"/>
+            <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
         </Grid>
 
     </Grid>
