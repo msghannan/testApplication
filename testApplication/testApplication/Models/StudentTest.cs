@@ -8,7 +8,7 @@ namespace testApplication.Models
 {
     class StudentTest
     {
-        public int StudentId {get; set;}
+        public int StudentID {get; set;}
         public int TestId { get; set; }
     }
 }

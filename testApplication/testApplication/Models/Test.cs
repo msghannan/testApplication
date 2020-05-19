@@ -8,12 +8,12 @@ namespace testApplication.Model
 {
     public class Test
     {
-        public int TestId { get; set; }
+        public int TestID { get; set; }
         public string TestName { get; set; }
 
         public Test (int testId, string testName)
         {
-            this.TestId = testId;
+            this.TestID = testId;
             this.TestName = testName;
         }
     }

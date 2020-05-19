@@ -8,10 +8,11 @@ namespace testApplication.Models
 {
    abstract public class Person
     {
-      private  string firstName;
-      private string lastName;
-      private string email;
-      private string phoNum;
+        private int personID;
+        private  string firstName;
+        private string lastName;
+        private string email;
+        private string phoNum;
 
 
         public string FirstName
@@ -34,6 +35,11 @@ namespace testApplication.Models
         {
             get { return phoNum; ; }
             set { phoNum = value; }
+        }
+        public int PersonID
+        {
+            get { return personID; ; }
+            set { personID = value; }
         }
 
 

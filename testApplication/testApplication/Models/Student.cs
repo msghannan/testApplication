@@ -8,7 +8,7 @@ namespace testApplication.Models
 {
     public class Student: Person
     {
-      public int studentId;
+      public int studentID;
       public string studentClass;
        
         public string StudentClass
@@ -18,8 +18,8 @@ namespace testApplication.Models
         }
         public int StudentId
         {
-            get { return studentId; }
-            set { studentId = value; }
+            get { return studentID; }
+            set { studentID = value; }
         }
     }
 

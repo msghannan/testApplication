@@ -8,12 +8,12 @@ namespace testApplication.Models
 {
    public class Teacher: Person
    {
-        public int teacherId;
+        public int teacherID;
 
         public int TeacherId
         {
-            get { return teacherId; }
-            set { teacherId = value; }
+            get { return teacherID; }
+            set { teacherID = value; }
         }
     }
 }
