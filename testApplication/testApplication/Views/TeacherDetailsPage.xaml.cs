@@ -20,18 +20,11 @@ namespace testApplication.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CreateTestPage : Page
+    public sealed partial class TeacherDetailsPage : Page
     {
-        public CreateTestPage()
+        public TeacherDetailsPage()
         {
             this.InitializeComponent();
         }
-
-        private void SignOutButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        
     }
 }

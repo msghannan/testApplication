@@ -43,8 +43,9 @@
 
 
         <Grid x:Name="PersonInfoGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
-            <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="SignOutButton_Click" HorizontalAlignment="Center"/>
+            <Button Style="{StaticResource RoundButtontamplate}" x:Name="SignOutButton" Content="Logga ut!" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="SignOutButton_Click" HorizontalAlignment="Center"/>
         </Grid>
+        <TextBox HorizontalAlignment="Left" Margin="1444,194,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Page>

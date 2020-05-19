@@ -26,5 +26,7 @@ namespace testApplication.Views
         {
             this.InitializeComponent();
         }
+
+       
     }
 }
