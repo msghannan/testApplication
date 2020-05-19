@@ -8,7 +8,7 @@ namespace testApplication.Models
 {
    abstract public class Person
     {
-        private int id;
+        public int Id { get; set; }
         private  string firstName;
         private string lastName;
         private string email;
@@ -17,7 +17,7 @@ namespace testApplication.Models
 
         public Person(int id, string firstName, string lastName, string email, string phoNum, char title)
         {
-            this.id = id;
+            this.Id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.email = email;
@@ -46,11 +46,7 @@ namespace testApplication.Models
             get { return phoNum; ; }
             set { phoNum = value; }
         }
-        public int Id
-        {
-            get { return id; ; }
-            set { id = value; }
-        }
+      
 
         public char Title
         {
