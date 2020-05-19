@@ -10,7 +10,7 @@ namespace testApplication.Models
    {
         public int teacherID;
 
-        public int TeacherId
+        public int TeacherID
         {
             get { return teacherID; }
             set { teacherID = value; }
