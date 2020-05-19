@@ -21,16 +21,16 @@ namespace testApplication.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MyStudentsPage : Page
+    public sealed partial class MyTeachersPage : Page
     {
-        private StudentViewModel studentViewModel;
+        private TeacherViewModel teacherViewModel;
 
-        public MyStudentsPage()
+        public MyTeachersPage()
         {
             this.InitializeComponent();
 
-            studentViewModel = new StudentViewModel();
-    }
+            teacherViewModel = new TeacherViewModel();
+        }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {

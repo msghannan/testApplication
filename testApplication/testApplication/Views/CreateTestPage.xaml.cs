@@ -31,5 +31,12 @@ namespace testApplication.Views
         {
             this.Frame.GoBack();
         }
+
+        private void SignOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
+
+        
     }
 }
