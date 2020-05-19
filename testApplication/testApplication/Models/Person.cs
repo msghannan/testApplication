@@ -8,12 +8,22 @@ namespace testApplication.Models
 {
    abstract public class Person
     {
-        private int personID;
+        private int id;
         private  string firstName;
         private string lastName;
         private string email;
         private string phoNum;
+        private char title;
 
+        public Person(int id, string firstName, string lastName, string email, string phoNum, char title)
+        {
+            this.id = id;
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.email = email;
+            this.phoNum = phoNum;
+            this.title = title;
+        }
 
         public string FirstName
         {
@@ -36,10 +46,16 @@ namespace testApplication.Models
             get { return phoNum; ; }
             set { phoNum = value; }
         }
-        public int PersonID
+        public int Id
         {
-            get { return personID; ; }
-            set { personID = value; }
+            get { return id; ; }
+            set { id = value; }
+        }
+
+        public char Title
+        {
+            get { return title; ; }
+            set { title = value; }
         }
 
 
