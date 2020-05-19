@@ -121,10 +121,9 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonTest.cs" />
     <Compile Include="Models\QuestionTest.cs" />
-    <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\StudentTest.cs" />
-    <Compile Include="Models\Teacher.cs" />
+    <Compile Include="ViewModels\AccountLoginViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
     <Compile Include="ViewModels\TeacherViewModel.cs" />

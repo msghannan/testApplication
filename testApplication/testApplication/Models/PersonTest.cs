@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace testApplication.Models
 {
-    class StudentTest
+    class PersonTest
     {
-        public int StudentId {get; set;}
+
+        public int PersonId { get; set; }
         public int TestId { get; set; }
     }
 }

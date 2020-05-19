@@ -46,6 +46,13 @@ namespace testApplication.Models
             get { return phoNum; ; }
             set { phoNum = value; }
         }
+      
+
+        public char Title
+        {
+            get { return title; ; }
+            set { title = value; }
+        }
 
         public char Title
         {
