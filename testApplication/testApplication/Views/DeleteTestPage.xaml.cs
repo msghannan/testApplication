@@ -20,23 +20,11 @@ namespace testApplication.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CreateTestPage : Page
+    public sealed partial class DeleteTestPage : Page
     {
-        public CreateTestPage()
+        public DeleteTestPage()
         {
             this.InitializeComponent();
         }
-
-        private void GoBackButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.GoBack();
-        }
-
-        private void SignOutButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
-
-        
     }
 }

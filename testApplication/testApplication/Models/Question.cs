@@ -9,14 +9,14 @@ namespace testApplication.Model
 {
     public class Question
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Quest { get; set; }
 
         public List<string> ChoiseList = new List<string>();
 
         public Question (int id, string question)
         {
-            this.ID = id;
+            this.Id = id;
             this.Quest = question;
         }
 
