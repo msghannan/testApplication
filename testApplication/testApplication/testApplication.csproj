@@ -129,28 +129,46 @@
     <Compile Include="ViewModels\StudentViewModel.cs" />
     <Compile Include="ViewModels\TeacherViewModel.cs" />
     <Compile Include="Models\AccountLogin.cs" />
-    <Compile Include="Models\APIServices.cs" />
+    <Compile Include="Services\APIServices.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Test.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
+    <Compile Include="Views\ActiveTestsPage.xaml.cs">
+      <DependentUpon>ActiveTestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactAdminPage.xaml.cs">
+      <DependentUpon>ContactAdminPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateTestPage.xaml.cs">
       <DependentUpon>CreateTestPage.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="Views\DeleteTestPage.xaml.cs">
       <DependentUpon>DeleteTestPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
+   
+
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\MyStudentsPage.xaml.cs">
+      <DependentUpon>MyStudentsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyTeachersPage.xaml.cs">e
+      <DependentUpon>MyTeachersPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StudentPage.xaml.cs">
       <DependentUpon>StudentPage.xaml</DependentUpon>
     </Compile>
+
     <Compile Include="Views\TeacherDetailsPage.xaml.cs">
       <DependentUpon>TeacherDetailsPage.xaml</DependentUpon>
+
+    <Compile Include="Views\StudentsResultsPage.xaml.cs">
+      <DependentUpon>StudentsResultsPage.xaml</DependentUpon>
+
     </Compile>
     <Compile Include="Views\TeacherPage.xaml.cs">
       <DependentUpon>TeacherPage.xaml</DependentUpon>
@@ -177,15 +195,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\CreateTestPage.xaml">
+    <Page Include="Views\ActiveTestsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ContactAdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+
     <Page Include="Views\DeleteTestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginPage.xaml">
+
+    <Page Include="Views\CreateTestPage.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,11 +219,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\MyStudentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MyTeachersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StudentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+
     <Page Include="Views\TeacherDetailsPage.xaml">
+
+    <Page Include="Views\StudentsResultsPage.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -20,12 +21,22 @@ namespace testApplication.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CreateTestPage : Page
+    public sealed partial class StudentsResultsPage : Page
     {
-        public CreateTestPage()
+        private StudentViewModel studentViewModel;
+
+        public StudentsResultsPage()
         {
             this.InitializeComponent();
+
+            studentViewModel = new StudentViewModel();
         }
+
+        private void StudentResultList_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -36,7 +47,5 @@ namespace testApplication.Views
         {
             this.Frame.Navigate(typeof(MainPage));
         }
-
-        
     }
 }

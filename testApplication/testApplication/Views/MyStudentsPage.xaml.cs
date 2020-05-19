@@ -21,15 +21,25 @@ namespace testApplication.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class LoginPage : Page
+    public sealed partial class MyStudentsPage : Page
     {
-        public LoginPage()
+        private StudentViewModel studentViewModel;
+
+        public MyStudentsPage()
         {
             this.InitializeComponent();
-            this.Vm = new LoginPageViewModel();
-        
+
+            studentViewModel = new StudentViewModel();
+    }
+
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.GoBack();
         }
 
-        public LoginPageViewModel Vm { get; set; }
+        private void SignOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }

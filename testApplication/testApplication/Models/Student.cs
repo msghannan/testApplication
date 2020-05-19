@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace testApplication.Models
 {
-    class Student: Person
+    public class Student: Person
     {
       public int studentId;
       public string studentClass;

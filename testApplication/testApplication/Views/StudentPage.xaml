@@ -19,20 +19,20 @@
 
 
 
-        <Grid x:Name="TeacherPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
+        <Grid x:Name="StudentPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
 
-            <Grid x:Name="TeacherPageChoisesButton" HorizontalAlignment="Center" VerticalAlignment="Top" Height="280" Width="600">
-                <Button x:Name="CreateTestButton" Content="Aktiva prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#7c21d9" Height="100" Width="200" Margin="100,0,0,0" VerticalAlignment="Top" Click="CreateTestButton_Click"/>
-                <Button x:Name="MyStudentsButton" Content="Mina lärare" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="100" Width="200" Margin="323,0,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="MyInfoButton" Content="Mina uppgifter" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#f5a300" Height="100" Width="200" Margin="100,110,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="ContactAdmin" Content="Hjälp / Kontakta admin" FontSize="18" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#000000" Height="100" Width="200" Margin="323,110,0,0" VerticalAlignment="Top"/>
+            <Grid x:Name="StudentPageChoisesButton" HorizontalAlignment="Center" VerticalAlignment="Top" Height="280" Width="600">
+                <Button x:Name="ActiveTestButton" Content="Aktiva prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#7c21d9" Height="100" Width="200" Margin="100,0,0,0" VerticalAlignment="Top" Click="ActiveTestButton_Click"/>
+                <Button x:Name="MyTeachersButton" Content="Mina lärare" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="100" Width="200" Margin="323,0,0,0" VerticalAlignment="Top" Click="MyTeachersButton_Click"/>
+                <Button x:Name="MyInfoButton" Content="Mina uppgifter" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#f5a300" Height="100" Width="200" Margin="100,110,0,0" VerticalAlignment="Top" Click="MyInfoButton_Click"/>
+                <Button x:Name="ContactAdmin" Content="Hjälp / Kontakta admin" FontSize="18" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#000000" Height="100" Width="200" Margin="323,110,0,0" VerticalAlignment="Top" Click="ContactAdmin_Click"/>
             </Grid>
 
-            <Grid x:Name="TeacherQuotesGrid" Width="750" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20">
-                <TextBlock x:Name="TeacherQuotesTextBlock" Text="Det enda goda är kunskap och det enda onda är okunnighet, Sokrates " FontSize="24" FontStyle="Italic" HorizontalAlignment="Center" Margin="0"/>
+            <Grid x:Name="StudentQuotesGrid" Width="750" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20">
+                <TextBlock x:Name="StudentQuotesTextBlock" Text="Det enda goda är kunskap och det enda onda är okunnighet, Sokrates " FontSize="24" FontStyle="Italic" HorizontalAlignment="Center" Margin="0"/>
             </Grid>
 
-            <Grid x:Name="TeacherPageImageGrid" VerticalAlignment="Bottom" Margin="280,0,270,80" Height="192">
+            <Grid x:Name="StudentPageImageGrid" VerticalAlignment="Bottom" Margin="280,0,270,80" Height="192">
                 <Image Source="/Assets/StudentPageImage.jpg" Margin="0,14,-1,-14"/>
             </Grid>
 
@@ -43,7 +43,9 @@
 
 
         <Grid x:Name="PersonInfoGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
-            <Button Style="{StaticResource RoundButtontamplate}" x:Name="SignOutButton" Content="Logga ut!" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="SignOutButton_Click" HorizontalAlignment="Center"/>
+
+            <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
+
         </Grid>
         <TextBox HorizontalAlignment="Left" Margin="1444,194,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top"/>
 

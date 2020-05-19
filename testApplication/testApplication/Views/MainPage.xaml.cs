@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.ViewModel;
+using testApplication.ViewModels;
 using testApplication.Views;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -23,14 +25,32 @@ namespace testApplication
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private LoginPageViewModel loginPageViewModel;
+        private QuestionViewModel questionViewModel;
+        private StudentViewModel studentViewModel;
+        private TeacherViewModel teacherViewModel;
+        private TestViewModel testViewModel;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            loginPageViewModel = new LoginPageViewModel();
+            questionViewModel = new QuestionViewModel();
+            studentViewModel = new StudentViewModel();
+            teacherViewModel = new TeacherViewModel();
+            testViewModel = new TestViewModel();
+        }
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TeacherPage));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(TeacherPage));
+            this.Frame.Navigate(typeof(StudentPage));
         }
     }
 }
