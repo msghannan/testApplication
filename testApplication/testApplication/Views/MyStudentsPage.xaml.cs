@@ -23,14 +23,14 @@ namespace testApplication.Views
     /// </summary>
     public sealed partial class MyStudentsPage : Page
     {
-        private StudentViewModel studentViewModel;
+        private PersonViewModel personViewModel;
 
         public MyStudentsPage()
         {
             this.InitializeComponent();
 
-            studentViewModel = new StudentViewModel();
-    }
+            personViewModel = new PersonViewModel();
+        }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {

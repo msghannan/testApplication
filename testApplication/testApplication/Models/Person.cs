@@ -27,33 +27,32 @@ namespace testApplication.Models
 
         public string FirstName
         {
-            get { return firstName; ; }
+            get { return firstName; }
             set { firstName = value; }
         }
 
         public string LastName
         {
-            get { return lastName; ; }
+            get { return lastName;}
             set { lastName = value; }
         }
         public string Email
         {
-            get { return email; ; }
+            get { return email; }
             set { email = value; }
         }
         public string PhoNumber
         {
-            get { return phoNum; ; }
+            get { return phoNum; }
             set { phoNum = value; }
         }
       
 
         public char Title
         {
-            get { return title; ; }
+            get { return title; }
             set { title = value; }
         }
-
 
     }
 }

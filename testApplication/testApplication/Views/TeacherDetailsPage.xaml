@@ -13,14 +13,23 @@
 
 
             <Grid x:Name="WelcomeTextGrid" Width="850" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0">
-                <TextBlock x:Name="WelcomeTextGridTextBlock" Text="Välkommen till din sida!" FontSize="80" Margin="0"/>
+                <TextBlock x:Name="WelcomeTextGridTextBlock" Text="Uppdatera dina uppgifter" FontSize="70" Margin="0"/>
             </Grid>
 
             <Grid x:Name="TeacherDetailsGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-                <TextBox HorizontalAlignment="Left" Margin="26,30,0,0" PlaceholderText="Namn" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="290"/>
-                <TextBox HorizontalAlignment="Left" Margin="26,114,0,0" PlaceholderText="Namn" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="290" Text="Email"/>
-                <TextBox HorizontalAlignment="Left" Margin="26,202,0,0" PlaceholderText="Namn" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="290" Text="Tel nr:"/>
 
+                <TextBlock x:Name="CurrentFirstNameTextBlock" HorizontalAlignment="Left" Margin="70,117,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBlock x:Name="CurrentLastNameTextBlock" HorizontalAlignment="Left" Margin="70,203,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBlock x:Name="CurrentEmailNameTextBlock" HorizontalAlignment="Left" Margin="70,283,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBlock x:Name="CurrentPhoNumberNameTextBlock" HorizontalAlignment="Left" Margin="70,360,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
+
+
+                <TextBox HorizontalAlignment="Left" Margin="408,117,0,0" PlaceholderText="Förnamn" VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBox HorizontalAlignment="Left" Margin="408,203,0,0" PlaceholderText="Efternamn" VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBox HorizontalAlignment="Left" Margin="408,283,0,0" PlaceholderText="Email"  VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBox HorizontalAlignment="Left" Margin="408,360,0,0" PlaceholderText="Tel.nr" VerticalAlignment="Top" Height="49" Width="290"/>
+
+                
             </Grid>
 
 
@@ -28,9 +37,9 @@
 
 
             <Grid x:Name="PersonInfoGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
-                <Button x:Name="SigndOutButton" Content="Logga ut!" Style="{StaticResource RoundButtontamplate}" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" HorizontalAlignment="Center"/>
-                <Button Content="Uppdatera" Background="SteelBlue" FontSize="35" Style="{StaticResource RoundButtontamplate}" Margin="0,10,0,0" VerticalAlignment="Top" Height="65" Width="174" HorizontalAlignment="Center"/>
-
+                <Button x:Name="UppdateMyInofButton" Content="Uppdatera" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#3b5999" Margin="20" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center"/>
+                <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
+                <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
             </Grid>
 
         </Grid>

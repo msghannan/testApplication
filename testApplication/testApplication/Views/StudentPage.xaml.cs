@@ -47,7 +47,7 @@ namespace testApplication.Views
 
         private void MyInfoButton_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(TeacherDetailsPage));
         }
 
         private void ContactAdmin_Click(object sender, RoutedEventArgs e)
