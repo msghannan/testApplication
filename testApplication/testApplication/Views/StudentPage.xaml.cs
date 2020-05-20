@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +23,13 @@ namespace testApplication.Views
     /// </summary>
     public sealed partial class StudentPage : Page
     {
+        private StudentViewModel studentViewModel;
+
         public StudentPage()
         {
             this.InitializeComponent();
+
+            studentViewModel = new StudentViewModel();
         }
 
 
