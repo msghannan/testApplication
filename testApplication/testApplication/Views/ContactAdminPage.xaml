@@ -29,8 +29,8 @@
 
 
             <Grid x:Name="SideGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
-                <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="35" Margin="0,330,0,0" VerticalAlignment="Top" Height="65" Width="174" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
-                <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
+                <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
             </Grid>
 
         </Grid>

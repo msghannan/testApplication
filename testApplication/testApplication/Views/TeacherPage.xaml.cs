@@ -51,5 +51,15 @@ namespace testApplication.Views
         {
             this.Frame.Navigate(typeof(ContactAdminPage));
         }
+
+        private void MyInfoButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(TeacherDetailsPage));
+        }
+
+        private void DeleteTestButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(DeleteTestPage));
+        }
     }
 }

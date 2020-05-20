@@ -11,36 +11,59 @@
     <Grid>
 
 
-        <TextBlock x:Name="WelcomeTextGridTextBlock" Text="Skapa prov" FontSize="80" Margin="243,26,176,584"/>
+        <TextBlock x:Name="WelcomeTextGridTextBlock" Text="Skapa prov" FontSize="70" Margin="243,26,176,584"/>
 
 
         <Grid x:Name="CreateTestPageGrid" Width="831" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
 
-            <TextBox x:Name="TestNameTextbox" HorizontalAlignment="Left" Margin="10,10,0,0" PlaceholderText="Titel" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-            <TextBox x:Name="QuestionTextbox" HorizontalAlignment="Center" Margin="0,64,0,0"  PlaceholderText="Skriv din fråga"  TextWrapping="Wrap" VerticalAlignment="Top" Width="810" Height="76"/>
 
-            <Grid x:Name="ChoiseseGrid" Width="500" Height="220" Margin="10,172,321,111">
+
+            <Grid x:Name="QuestionGrid" Width="831" Margin="0,0,0,296">
+                <TextBox x:Name="TestNameTextbox" HorizontalAlignment="Left" Margin="10,10,0,0" PlaceholderText="Provets namn. Ex: mattematik prov" TextWrapping="Wrap" VerticalAlignment="Top" Width="241"/>
+                <TextBox x:Name="QuestionTextbox" HorizontalAlignment="Center" Margin="0,64,0,0"  PlaceholderText="Skriv din fråga"  TextWrapping="Wrap" VerticalAlignment="Top" Width="810" Height="76"/>
+                <TextBlock x:Name="QuestionPointTextBlock" Text="Antal poäng: " Width="80" Height="20" Margin="10,160,741,27"/>
+                <TextBox x:Name="QuestionPointInputTextBox" Width="100" Height="30"  Margin="106,150,625,10"/>
+            </Grid>
+
+
+
+            <Grid x:Name="ChoiseseGrid" Margin="10,232,466,67">
 
                 <TextBox x:Name="ChoiseTextBox1"   HorizontalAlignment="Left" Margin="0,0,0,0"  PlaceholderText="Svaralternativ 1" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-                <CheckBox x:Name="ChoiseCheckBox1" Content="Boka rätt svar" Margin="222,0,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="ChoiseCheckBox1" Content="Rätt svar" Margin="222,0,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
                 <TextBox  x:Name="ChoiseTextBox2"   HorizontalAlignment="Left" Margin="0,50,0,0"  PlaceholderText="Svaralternativ 2" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-                <CheckBox  x:Name="ChoisekeckBox2" Content="Boka rätt svar"   Margin="222,50,0,0" VerticalAlignment="Top"/>
+                <CheckBox  x:Name="ChoisekeckBox2" Content="Rätt svar"   Margin="222,50,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
-                <TextBox  x:Name="ChoiseTextBox3"   HorizontalAlignment="Left" Margin="0,110,0,0"  PlaceholderText="Svaralternativ 3" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-                <CheckBox  x:Name="ChoisekeckBox3" Content="Boka rätt svar" Margin="222,110,0,0" VerticalAlignment="Top"/>
+                <TextBox  x:Name="ChoiseTextBox3"   HorizontalAlignment="Left" Margin="0,100,0,0"  PlaceholderText="Svaralternativ 3" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+                <CheckBox  x:Name="ChoisekeckBox3" Content="Rätt svar" Margin="222,100,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
-                <TextBox  x:Name="ChoiseTextBox4"  HorizontalAlignment="Left" Margin="0,160,0,0"  PlaceholderText="Svaralternativ 4" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-                <CheckBox x:Name="ChoiseCkeckBox4" Content="Boka rätt svar" Margin="222,160,0,0" VerticalAlignment="Top"/>
+                <TextBox  x:Name="ChoiseTextBox4"  HorizontalAlignment="Left" Margin="0,150,0,0"  PlaceholderText="Svaralternativ 4" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
+                <CheckBox x:Name="ChoiseCkeckBox4" Content="Rätt svar" Margin="222,150,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
+
+
+
             </Grid>
+
+            <TextBlock x:Name="NumberOfWuestionsInfoTextBlock" Text="Antal frågor i provet: " Margin="614,448,86,20"/>
+            <TextBlock x:Name="NumberOfWuestionsInfoTextBlock2" Height="30" Width="60" Margin="747,448,12,20"/>
+
+            <TextBlock x:Name="NumberOfPointsInfoTextBlock" Text="Totalt antal poäng i provet: " Margin="333,448,327,17"/>
+            <TextBlock x:Name="NumberOfPointsInfoTextBlock2" Height="30" Width="60" Margin="538,448,233,20"/>
+
+
         </Grid>
+
+
+
 
         <Grid x:Name="CreateTestPageButtonsGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
 
-         
-
-            <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="35" Margin="0,330,0,0" VerticalAlignment="Top" Height="65" Width="174" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
-            <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="35" Margin="0,404,0,0" VerticalAlignment="Top" Height="65" Width="174" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
+            <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
+            <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
+            <Button x:Name="AddQuestionButton" Content="Lägga till fråga" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Button x:Name="AddTestButton" Content="Lägga prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="0,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
 
         </Grid>
         <Button Content="Button" Margin="1328,90,0,0" VerticalAlignment="Top" Width="0"/>

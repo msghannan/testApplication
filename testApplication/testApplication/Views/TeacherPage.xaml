@@ -25,8 +25,8 @@
                 <Button x:Name="CreateTestButton" Content="Skapa prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#7c21d9" Height="100" Width="200" Margin="20" VerticalAlignment="Top" Click="CreateTestButton_Click"/>
                 <Button x:Name="StudentsResultsButton" Content="Elevernas resultat" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3b5999" Height="100" Width="200" Margin="20,130,0,0" VerticalAlignment="Top" Click="StudentsResultsButton_Click"/>
                 <Button x:Name="MyStudentsButton" Content="Mina elever" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="100" Width="200" Margin="240,130,0,0" VerticalAlignment="Top" Click="MyStudentsButton_Click"/>
-                <Button x:Name="DeleteTestButton" Content="Ta bort prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#d30000" Height="100" Width="200" Margin="240,20,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="MyInfoButton" Content="Mina uppgifter" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#f5a300" Height="100" Width="200" Margin="460,20,0,0" VerticalAlignment="Top"/>
+                <Button x:Name="DeleteTestButton" Content="Ta bort prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#d30000" Height="100" Width="200" Margin="240,20,0,0" VerticalAlignment="Top" Click="DeleteTestButton_Click"/>
+                <Button x:Name="MyInfoButton" Content="Mina uppgifter" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#f5a300" Height="100" Width="200" Margin="460,20,0,0" VerticalAlignment="Top" Click="MyInfoButton_Click"/>
                 <Button x:Name="ContactAdmin" Content="Hjälp / Kontakta admin" FontSize="18" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#000000" Height="100" Width="200" Margin="460,130,0,0" VerticalAlignment="Top" Click="ContactAdmin_Click"/>
             </Grid>
 
