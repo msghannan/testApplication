@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +23,13 @@ namespace testApplication.Views
     /// </summary>
     public sealed partial class CreateTestPage : Page
     {
+        private TestViewModel testViewModel;
+
         public CreateTestPage()
         {
             this.InitializeComponent();
+
+            testViewModel = new TestViewModel();
         }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)

@@ -23,13 +23,13 @@ namespace testApplication.Views
     /// </summary>
     public sealed partial class StudentsResultsPage : Page
     {
-        private PersonViewModel personViewModel;
+        private StudentViewModel studentViewModel;
 
         public StudentsResultsPage()
         {
             this.InitializeComponent();
 
-            personViewModel = new PersonViewModel();
+            studentViewModel = new StudentViewModel();
         }
 
         private void StudentResultList_ItemClick(object sender, ItemClickEventArgs e)

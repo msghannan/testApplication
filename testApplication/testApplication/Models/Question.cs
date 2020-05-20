@@ -14,6 +14,8 @@ namespace testApplication.Model
 
         public List<string> ChoiseList = new List<string>();
 
+        public List<string> QuestionsList = new List<string>();
+
         public Question (int id, string question)
         {
             this.Id = id;

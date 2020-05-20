@@ -29,6 +29,8 @@ namespace testApplication
         private QuestionViewModel questionViewModel;
         private PersonViewModel personViewModel;
         private TestViewModel testViewModel;
+        private StudentViewModel studentViewModel;
+        private TeacherViewModel teacherViewModel;
 
         public MainPage()
         {
@@ -38,6 +40,8 @@ namespace testApplication
             questionViewModel = new QuestionViewModel();
             personViewModel = new PersonViewModel();
             testViewModel = new TestViewModel();
+            studentViewModel = new StudentViewModel();
+            teacherViewModel = new TeacherViewModel();
         }
 
 
