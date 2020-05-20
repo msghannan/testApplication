@@ -24,12 +24,14 @@ namespace testApplication.Views
     public sealed partial class StudentsResultsPage : Page
     {
         private StudentViewModel studentViewModel;
+        private StudentsResultsViewModel studentsResultsViewModel;
 
         public StudentsResultsPage()
         {
             this.InitializeComponent();
 
             studentViewModel = new StudentViewModel();
+            studentsResultsViewModel = new StudentsResultsViewModel();
         }
 
         private void StudentResultList_ItemClick(object sender, ItemClickEventArgs e)
