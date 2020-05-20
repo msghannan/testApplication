@@ -8,12 +8,12 @@ namespace testApplication.Models
 {
     public class Student : Person
     {
-        public int StundentId { get; set; }
+        public int StudentId { get; set; }
         public string Grade { get; set; }
 
-        public Student (int studentId, string grade, int id, string firstName, string lastName, string email, string phoNum, char title) :base (id, firstName, lastName, email, phoNum, title)
+        public Student (int StudentId, string grade, int id, string firstName, string lastName, string email, string phoNum, char title) :base (id, firstName, lastName, email, phoNum, title)
         {
-            this.StundentId = studentId;
+            this.StudentId  = Id;
             this.Grade = grade;
         }
     }
