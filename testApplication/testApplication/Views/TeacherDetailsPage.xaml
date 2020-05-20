@@ -5,6 +5,7 @@
     xmlns:local="using:testApplication.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:testApplication.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -18,6 +19,7 @@
 
             <Grid x:Name="TeacherDetailsGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
 
+
                 <TextBlock x:Name="CurrentFirstNameTextBlock" HorizontalAlignment="Left" Margin="70,117,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
                 <TextBlock x:Name="CurrentLastNameTextBlock" HorizontalAlignment="Left" Margin="70,203,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
                 <TextBlock x:Name="CurrentEmailNameTextBlock" HorizontalAlignment="Left" Margin="70,283,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
@@ -29,7 +31,6 @@
                 <TextBox HorizontalAlignment="Left" Margin="408,283,0,0" PlaceholderText="Email"  VerticalAlignment="Top" Height="49" Width="290"/>
                 <TextBox HorizontalAlignment="Left" Margin="408,360,0,0" PlaceholderText="Tel.nr" VerticalAlignment="Top" Height="49" Width="290"/>
 
-                
             </Grid>
 
 

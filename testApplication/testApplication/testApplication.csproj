@@ -124,6 +124,7 @@
     <Compile Include="Models\PersonTest.cs" />
     <Compile Include="Models\QuestionTest.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentsResults.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="ViewModels\AccountLoginViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Models\Test.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
+    <Compile Include="ViewModels\StudentsResultsViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
     <Compile Include="ViewModels\TeacherViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />

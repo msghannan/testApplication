@@ -5,7 +5,7 @@
     xmlns:local="using:testApplication.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:data="using:testApplication.Model"
+    xmlns:data="using:testApplication.Models"
     xmlns:models="using:testApplication.Models"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -22,14 +22,22 @@
 
 
         <Grid x:Name="StudentResultPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-            <!--<ListView x:Name="StudentResultList" ItemsSource="{x:Bind studentViewModel.StudentResultList}" IsItemClickEnabled="True" ItemClick="StudentResultList_ItemClick">
+            <ListView x:Name="StudentsResultsListView" ItemsSource="{x:Bind studentsResultsViewModel.StudentResultList}">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="models:Student">
+                    <DataTemplate x:DataType="data:StudentsResults">
 
+                        <StackPanel x:Name="MyStudentsStackPanel" Orientation="Horizontal">
 
+                            <TextBlock x:Name="StudentIdTextBlock" Text="{x:Bind ResultId}" FontSize="25" Foreground="Black"/>
+                            <TextBlock x:Name="StudentFirstNameTextBlock" Text="{x:Bind StudentFirstName}" FontSize="25" Foreground="Black"/>
+                            <TextBlock x:Name="StudentLastTextBlock" Text="{x:Bind StudentLastName}" FontSize="25" Foreground="Black"/>
+                            <TextBlock x:Name="StudentPhoNumberTextBlock" Text="{x:Bind TestName}" FontSize="25" Foreground="Black"/>
+                            <TextBlock x:Name="StudentGradeTextBlock" Text="{x:Bind Grade}" FontSize="25" Foreground="Black"/>
+
+                        </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
         </Grid>
 
 
