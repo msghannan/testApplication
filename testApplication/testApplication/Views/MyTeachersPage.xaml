@@ -21,14 +21,22 @@
 
 
         <Grid x:Name="MyTeacherPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-            <!--<ListView x:Name="StudentResultList" ItemsSource="{x:Bind teacherViewModel}" IsItemClickEnabled="True" ItemClick="StudentResultList_ItemClick">
+            <ListView x:Name="MyTeachersListView" ItemsSource="{x:Bind teacherViewModel.TeacherList}">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Teacher">
 
+                        <StackPanel x:Name="MyTeachersStackPanel" Orientation="Horizontal">
 
-                        </DataTemplate>
+                            <TextBlock x:Name="TeacherFirstNameTextBlock" Text="{x:Bind FirstName}" FontSize="25" Foreground="Black"/>
+                            <TextBlock x:Name="TeacherLastNameTextBlock" Text="{x:Bind LastName}" FontSize="25" Foreground="Black"/>
+                            <TextBlock x:Name="TeacherEmailTextBlock" Text="{x:Bind Email}" FontSize="25" Foreground="Black"/>
+                            <TextBlock x:Name="TeacherPhoNumberTextBlock" Text="{x:Bind PhoNumber}" FontSize="25" Foreground="Black"/>
+
+                        </StackPanel>
+
+                    </DataTemplate>
                     </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
         </Grid>
 
 
