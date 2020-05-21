@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CommonServiceLocator;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,6 +26,8 @@ namespace testApplication
     /// </summary>
     sealed partial class App : Application
     {
+        public const string TeacherPage = "TeacherPage";
+        public const string StudentPage = "StudentPage";
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -31,6 +36,14 @@ namespace testApplication
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+            var nav = new NavigationService();
+            nav.Configure(TeacherPage, typeof(TeacherPage));
+            nav.Configure(StudentPage, typeof(StudentPage));
+            SimpleIoc.Default.Register<INavigationService>(() => nav);
+
         }
 
         /// <summary>

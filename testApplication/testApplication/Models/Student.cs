@@ -12,10 +12,10 @@ namespace testApplication.Models
         public int StudentId { get; set; }
         public string Grade { get; set; }
 
-        public Student (int StudentId, string grade, int id, string firstName, string lastName, string email, string phoNum, char title) :base (id, firstName, lastName, email, phoNum, title)
+        public Student (/*int StudentId, string grade, int id, string firstName, string lastName, string email, string phoNum, char title) :base (id, firstName, lastName, email, phoNum, title*/)
         {
-            this.StudentId  = Id;
-            this.Grade = grade;
+            //this.StudentId  = Id;
+            //this.Grade = grade;
         }
 
         public static implicit operator ObservableCollection<object>(Student v)

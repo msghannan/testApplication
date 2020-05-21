@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace testApplication.Models
 {
-    public class Teacher : Person
+    public class Teacher
     {
         public int TeacherId { get; set; }
 
-        public Teacher(int teacherId, int id, string firstName, string lastName, string email, string phoNum, char title) : base(id, firstName, lastName, email, phoNum, title)
+        public Teacher()
         {
-            this.TeacherId = teacherId;
+
         }
     }
 }

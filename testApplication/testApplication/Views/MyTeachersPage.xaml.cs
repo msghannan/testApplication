@@ -29,17 +29,18 @@ namespace testApplication.Views
         {
             this.InitializeComponent();
 
-            teacherViewModel = new TeacherViewModel();
+            this.vm = new TeacherViewModel();
         }
+        public TeacherViewModel vm { get; set; }
 
-        private void GoBackButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.GoBack();
-        }
+        //private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.GoBack();
+        //}
 
-        private void SignOutButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
+        //private void SignOutButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(typeof(MainPage));
+        //}
     }
 }
