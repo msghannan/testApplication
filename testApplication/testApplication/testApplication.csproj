@@ -120,15 +120,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Account.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\PersonTest.cs" />
     <Compile Include="Models\QuestionTest.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentsResults.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="ViewModels\AccountLoginViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
-    <Compile Include="Models\AccountLogin.cs" />
     <Compile Include="Services\APIServices.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Test.cs" />

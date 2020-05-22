@@ -21,17 +21,15 @@
 
 
         <Grid x:Name="MyTeacherPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-            <ListView x:Name="MyTeachersListView" ItemsSource="{x:Bind teacherViewModel.TeacherList}">
+            <ListView x:Name="MyTeachersListView" ItemsSource="{x:Bind vm.TeacherList}">
                     <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="data:Teacher">
+                        <DataTemplate x:DataType="data:Person">
 
                         <StackPanel x:Name="MyTeachersStackPanel" Orientation="Horizontal">
 
                             <TextBlock x:Name="TeacherFirstNameTextBlock" Text="{x:Bind FirstName}" FontSize="25" Foreground="Black"/>
                             <TextBlock x:Name="TeacherLastNameTextBlock" Text="{x:Bind LastName}" FontSize="25" Foreground="Black"/>
                             <TextBlock x:Name="TeacherEmailTextBlock" Text="{x:Bind Email}" FontSize="25" Foreground="Black"/>
-                            <TextBlock x:Name="TeacherPhoNumberTextBlock" Text="{x:Bind PhoNumber}" FontSize="25" Foreground="Black"/>
-
                         </StackPanel>
 
                     </DataTemplate>
@@ -44,8 +42,9 @@
 
 
         <Grid x:Name="SideGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
-            <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
-            <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>        </Grid>
+            <!--<Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>-->
+            <!--<Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>        -->
+            </Grid>
 
     </Grid>
 </Page>
