@@ -22,22 +22,6 @@ namespace testApplication.ViewModels
         {
             httpClient = new HttpClient();
             TeacherList = new ObservableCollection<Teacher>();
-            GetTeachers();
         }
-
-        public async void GetTeachers()
-        {
-            var jsonGetTeachers = await httpClient.GetStringAsync(urlGetTeachers);
-
-            var teacher = JsonConvert.DeserializeObject<ObservableCollection<Teacher>>(jsonGetTeachers);
-
-            foreach (Teacher a in teacher)
-            {
-                TeacherList.Add(a);
-            }
-        }
-
-
-
     }
 }

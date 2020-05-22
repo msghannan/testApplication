@@ -22,19 +22,7 @@ namespace testApplication.ViewModels
         {
             httpClient = new HttpClient();
             StudentList = new ObservableCollection<Student>();
-            GetStudents();
-        }
-
-        public async void GetStudents()
-        {
-            var jsonGetStudent = await httpClient.GetStringAsync(urlGetStudents);
-
-            var student = JsonConvert.DeserializeObject<ObservableCollection<Student>>(jsonGetStudent);
-
-            foreach (Student a in student)
-            {
-                StudentList.Add(a);
-            }
+            
         }
     }
 }

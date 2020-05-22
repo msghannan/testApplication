@@ -34,12 +34,6 @@ namespace testApplication
 
         public LoginPageViewModel Vm { get; set; }
 
-
-        //private void Button_Click_1(object sender, RoutedEventArgs e)
-        //{
-        //    this.Frame.Navigate(typeof(TeacherPage));
-        //}
-
         //private void Button_Click(object sender, RoutedEventArgs e)
         //{
         //    this.Frame.Navigate(typeof(StudentPage));

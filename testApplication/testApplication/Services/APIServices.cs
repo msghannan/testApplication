@@ -14,27 +14,6 @@ namespace testApplication.Models
     {
         private static string BaseUrl = "https://localhost:44363/api";
         private static string Accounts = "/Accounts";
-
-        //public async Task<Person> LoginAsync(string username, string password)
-        //{
-        //    Person acc = new Person();
-        //    try
-        //    {
-        //        using (HttpClient client = new HttpClient())
-        //        {
-        //            var abc = await client.GetStringAsync(new Uri(BaseUrl + PizzaMenu));
-        //            acc = JsonConvert.DeserializeObject<Person>(abc);
-        //        }
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Debug.WriteLine(e.Message);
-        //        return p;
-        //    }
-
-        //    return p;
-        //}
-
         public async Task<Person> LoginAsync(string username, string password)
         {
             Account acc = new Account();
