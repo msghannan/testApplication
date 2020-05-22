@@ -25,34 +25,18 @@ namespace testApplication
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private LoginPageViewModel loginPageViewModel;
-        private QuestionViewModel questionViewModel;
-        private PersonViewModel personViewModel;
-        private TestViewModel testViewModel;
-        private StudentViewModel studentViewModel;
-        private TeacherViewModel teacherViewModel;
 
         public MainPage()
         {
             this.InitializeComponent();
-
-            loginPageViewModel = new LoginPageViewModel();
-            questionViewModel = new QuestionViewModel();
-            personViewModel = new PersonViewModel();
-            testViewModel = new TestViewModel();
-            studentViewModel = new StudentViewModel();
-            teacherViewModel = new TeacherViewModel();
+            this.Vm = new LoginPageViewModel();
         }
 
+        public LoginPageViewModel Vm { get; set; }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(TeacherPage));
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(StudentPage));
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(typeof(StudentPage));
+        //}
     }
 }
