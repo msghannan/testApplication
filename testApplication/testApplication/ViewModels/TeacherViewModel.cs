@@ -37,7 +37,5 @@ namespace testApplication.ViewModels
             }
         }
 
-
-
     }
 }
