@@ -13,6 +13,8 @@ namespace testApplication.Model
         public int MaxPoints { get; set; }
         public DateTime TestDate { get; set; }
 
+        public List<Question> QuestionList = new List<Question>();
+
         public Test (int testId, string testName, int maxPoints, DateTime testDate)
         {
             this.TestId = testId;
