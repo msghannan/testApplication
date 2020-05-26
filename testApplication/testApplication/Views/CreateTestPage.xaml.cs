@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -29,6 +30,10 @@ namespace testApplication.Views
         private TestViewModel testViewModel;
         private QuestionViewModel questionViewModel;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        int TotPintsOfQuestions { get { return totPintsOfQuestions; } set { totPintsOfQuestions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotPintsOfQuestions")); } }
+        private int totPintsOfQuestions;
+
         public CreateTestPage()
         {
             this.InitializeComponent();
@@ -50,7 +55,6 @@ namespace testApplication.Views
 
         private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
         {
-            //skapa Question objekht
 
             Question Q1 = new Question();
 
@@ -65,6 +69,7 @@ namespace testApplication.Views
             testViewModel.QuestionList.Add(Q1);
 
             CountingQuestionsPoints();
+            ClearForNewQuestion();
 
         }
 
@@ -80,22 +85,45 @@ namespace testApplication.Views
 
             //Anropa postrequest i APIServices och skicka T1 till metoden
             await a.AddTestAsync(T1);
+            AddTestMessage();
+            ClearForNewTest();
+
 
         }
 
         private void CountingQuestionsPoints()
         {
-            int totPoints = 0;
-            int questPoint = 0;
+            int point = int.Parse(QuestionPointInputTextBox.Text);
+            totPintsOfQuestions += point;
 
-            QuestionPointInputTextBox.Text = totPoints.ToString();
-
-            totPoints += questPoint;
-
-            NumberOfPointsInfoTextBlock2.Text = questPoint.ToString();
-            
+            NumberOfPointsInfoTextBlock2.Text = totPintsOfQuestions.ToString();
         }
 
+        private void ClearForNewQuestion()
+        {
+            QuestionTextbox.Text = String.Empty;
+
+            ChoiseTextBox1.Text = String.Empty;
+            ChoiseTextBox2.Text = String.Empty;
+            ChoiseTextBox3.Text = String.Empty;
+            ChoiseTextBox4.Text = String.Empty;
+
+            NumberOfPointsInfoTextBlock2.Text = String.Empty;
+
+        }
+
+        private void ClearForNewTest()
+        {
+            TestNameTextbox.Text = String.Empty;
+
+            ClearForNewQuestion();
+        }
+
+        private async void AddTestMessage()
+        {
+            CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
+            await c.ShowAsync();
+        }
 
     }
 }

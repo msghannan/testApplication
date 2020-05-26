@@ -146,6 +146,9 @@
     <Compile Include="Views\ContactAdminPage.xaml.cs">
       <DependentUpon>ContactAdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CreateNewTestMessageContentDialog.xaml.cs">
+      <DependentUpon>CreateNewTestMessageContentDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateTestPage.xaml.cs">
       <DependentUpon>CreateTestPage.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ContactAdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateNewTestMessageContentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

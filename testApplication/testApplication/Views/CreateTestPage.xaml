@@ -50,7 +50,7 @@
             <TextBlock x:Name="NumberOfWuestionsInfoTextBlock2" Height="30" Width="60" Margin="747,448,12,20"/>
 
             <TextBlock x:Name="NumberOfPointsInfoTextBlock" Text="Totalt antal poäng i provet: " Margin="333,448,327,17"/>
-            <TextBlock x:Name="NumberOfPointsInfoTextBlock2" Height="30" Width="60" Margin="538,448,233,20"/>
+            <TextBlock x:Name="NumberOfPointsInfoTextBlock2" Height="30" Width="60" Margin="527,448,244,25"/>
 
 
         </Grid>
@@ -63,7 +63,7 @@
             <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
             <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
             <Button x:Name="AddQuestionButton" Content="Lägga till fråga" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center" Click="AddQuestionButton_Click"/>
-            <Button x:Name="AddTestButton" Content="Lägga prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="0,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="AddTestButton_Click"/>
+            <Button x:Name="AddTestButton" Content="Skapa prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="0,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="AddTestButton_Click"/>
 
         </Grid>
         <Button Content="Button" Margin="1328,90,0,0" VerticalAlignment="Top" Width="0"/>
