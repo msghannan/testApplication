@@ -33,13 +33,13 @@
                 <CheckBox x:Name="ChoiseCheckBox1" Content="Rätt svar" Margin="222,0,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
                 <TextBox  x:Name="ChoiseTextBox2"   HorizontalAlignment="Left" Margin="0,50,0,0"  PlaceholderText="Svaralternativ 2" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-                <CheckBox  x:Name="ChoisekeckBox2" Content="Rätt svar"   Margin="222,50,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <CheckBox  x:Name="ChoiseCheckBox2" Content="Rätt svar"   Margin="222,50,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
                 <TextBox  x:Name="ChoiseTextBox3"   HorizontalAlignment="Left" Margin="0,100,0,0"  PlaceholderText="Svaralternativ 3" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-                <CheckBox  x:Name="ChoisekeckBox3" Content="Rätt svar" Margin="222,100,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <CheckBox  x:Name="ChoiseCheckBox3" Content="Rätt svar" Margin="222,100,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
                 <TextBox  x:Name="ChoiseTextBox4"  HorizontalAlignment="Left" Margin="0,150,0,0"  PlaceholderText="Svaralternativ 4" TextWrapping="Wrap" VerticalAlignment="Top" Width="190"/>
-                <CheckBox x:Name="ChoiseCkeckBox4" Content="Rätt svar" Margin="222,150,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="ChoiseCheckBox4" Content="Rätt svar" Margin="222,150,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
 
 
 
@@ -62,8 +62,8 @@
 
             <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
             <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
-            <Button x:Name="AddQuestionButton" Content="Lägga till fråga" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-            <Button x:Name="AddTestButton" Content="Lägga prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="0,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <Button x:Name="AddQuestionButton" Content="Lägga till fråga" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Center" Click="AddQuestionButton_Click"/>
+            <Button x:Name="AddTestButton" Content="Lägga prov" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="0,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="AddTestButton_Click"/>
 
         </Grid>
         <Button Content="Button" Margin="1328,90,0,0" VerticalAlignment="Top" Width="0"/>

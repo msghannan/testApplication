@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,11 @@ namespace testApplication.Model
             this.TestName = testName;
             this.MaxPoints = maxPoints;
             this.TestDate = testDate; 
+        }
+
+        public Test()
+        {
+
         }
     }
 }

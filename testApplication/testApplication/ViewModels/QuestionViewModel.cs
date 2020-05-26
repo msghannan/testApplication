@@ -10,9 +10,14 @@ namespace testApplication.ViewModel
 {
     public class QuestionViewModel
     {
-        public ObservableCollection<Question> Questions { get; set; }
+        //public ObservableCollection<Question> Questions { get; set; }
 
         public QuestionViewModel ()
+        {
+
+        }
+
+        public void AddQuestion()
         {
 
         }
