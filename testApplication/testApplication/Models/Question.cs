@@ -12,15 +12,21 @@ namespace testApplication.Model
     {
         public int Id { get; set; }
         public string Quest { get; set; }
-        public int TestId { get; set; }
+
+        //public int TestId { get; set; }
         public int QuestionPoint { get; set; }
 
         public List<Answer> AnswerList = new List<Answer>();
 
-        public Question (int id, string question)
+        public Question (string question, int questionPoint)
         {
-            this.Id = id;
             this.Quest = question;
+            this.QuestionPoint = questionPoint;
+        }
+
+        public Question()
+        {
+
         }
 
     }
