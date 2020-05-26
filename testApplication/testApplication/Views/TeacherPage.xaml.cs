@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,7 +26,11 @@ namespace testApplication.Views
         public TeacherPage()
         {
             this.InitializeComponent();
+            teacherViewModel = new TeacherViewModel();
         }
+
+        private TeacherViewModel teacherViewModel;
+
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
         {
