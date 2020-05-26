@@ -11,7 +11,7 @@ namespace testApplication.ViewModels
     public class TestViewModel
     {
         public List<Question> QuestionList = new List<Question>();
-        public List<Test> TestList = new List<Test>();
+        public List<Test> Test = new List<Test>();
 
         public TestViewModel()
         {

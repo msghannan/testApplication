@@ -77,7 +77,7 @@ namespace testApplication.Views
 
             T1.QuestionList = testViewModel.QuestionList;
 
-            testViewModel.TestList.Add(T1);
+            testViewModel.Test.Add(T1);
 
         }
 
