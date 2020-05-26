@@ -68,8 +68,9 @@ namespace testApplication.Views
 
         }
 
-        private void AddTestButton_Click(object sender, RoutedEventArgs e)
+        private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
+            APIServices a = new APIServices();
             Test T1 = new Test();
 
             T1.TestName = TestNameTextbox.Text;
@@ -77,7 +78,8 @@ namespace testApplication.Views
 
             T1.QuestionList = testViewModel.QuestionList;
 
-            testViewModel.Test.Add(T1);
+            //Anropa postrequest i APIServices och skicka T1 till metoden
+            await a.AddTestAsync(T1);
 
         }
 
