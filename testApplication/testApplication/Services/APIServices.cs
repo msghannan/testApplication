@@ -14,9 +14,18 @@ namespace testApplication.Models
 {
     public class APIServices
     {
-        private static string PostUrl = "https://localhost:44363/api/Tests";
+        private static string PostTestUrl = "https://localhost:44363/api/Tests";
+        private static string GetTestUrl = "https://localhost:44363/api/Tests";
         private static string BaseUrl = "https://localhost:44363/api";
         private static string Accounts = "/Accounts";
+
+        HttpClient httpClient;
+
+        public APIServices()
+        {
+            httpClient = new HttpClient();
+        }
+
         public async Task<Person> LoginAsync(string username, string password)
         {
             Account acc = new Account();
@@ -46,6 +55,15 @@ namespace testApplication.Models
             return p;
         }
 
+        public async Task<ObservableCollection<Test>> GetActiveTests()
+        {
+            var jsonTests = await httpClient.GetStringAsync(GetTestUrl);
+
+            var tests = JsonConvert.DeserializeObject<ObservableCollection<Test>>(jsonTests);
+
+            return tests;
+        }
+
         public async Task AddTestAsync(Test t)
         {
             using (HttpClient client = new HttpClient())
@@ -53,9 +71,11 @@ namespace testApplication.Models
                 var test = JsonConvert.SerializeObject(t);
                 HttpContent httpContent = new StringContent(test);
                 httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                var result = await client.PostAsync(PostUrl, httpContent);
+                var result = await client.PostAsync(PostTestUrl, httpContent);
             }
 
         }
+
+
     }
 }

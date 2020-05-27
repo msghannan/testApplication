@@ -75,11 +75,15 @@ namespace testApplication.Views
 
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
+            int lastPoint = int.Parse(QuestionPointInputTextBox.Text);
+            int point = int.Parse(NumberOfPointsInfoTextBlock2.Text);
+            int maxPoints = lastPoint + point;
+
             APIServices a = new APIServices();
             Test T1 = new Test();
 
             T1.TestName = TestNameTextbox.Text;
-            T1.MaxPoints = int.Parse(NumberOfPointsInfoTextBlock2.Text);
+            T1.MaxPoints = maxPoints;
 
             T1.QuestionList = testViewModel.QuestionList;
 
@@ -108,13 +112,14 @@ namespace testApplication.Views
             ChoiseTextBox3.Text = String.Empty;
             ChoiseTextBox4.Text = String.Empty;
 
-            NumberOfPointsInfoTextBlock2.Text = String.Empty;
+            QuestionPointInputTextBox.Text = String.Empty;
 
         }
 
         private void ClearForNewTest()
         {
             TestNameTextbox.Text = String.Empty;
+            NumberOfPointsInfoTextBlock2.Text = String.Empty;
 
             ClearForNewQuestion();
         }
