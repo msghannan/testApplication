@@ -46,7 +46,7 @@
         <Grid x:Name="PersonInfoGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
 
 
-            <!--<Grid x:Name="SignedInPersonGridView" Margin="5,5,5,99">
+            <Grid x:Name="SignedInPersonGridView" Margin="5,5,5,99">
                 <ListView x:Name="SignedInPersonListView" ScrollViewer.VerticalScrollBarVisibility="Hidden" ItemsSource="{x:Bind studentViewModel.Person}" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Person">
@@ -70,9 +70,9 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </Grid>-->
-            
-            
+            </Grid>
+
+
 
             <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
         </Grid>
