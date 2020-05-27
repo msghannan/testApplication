@@ -24,8 +24,6 @@ namespace testApplication.ViewModels
         {
             httpClient = new HttpClient();
             StudentList = new ObservableCollection<Student>();
-            Person.Add(App.LoggedInUser);
-            
         }
     }
 }
