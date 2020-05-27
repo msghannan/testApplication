@@ -23,8 +23,8 @@ namespace testApplication.ViewModels
         public StudentViewModel()
         {
             httpClient = new HttpClient();
-            StudentList = new ObservableCollection<Student>();
-            Person.Add(App.LoggedInUser);
+            Person = new ObservableCollection<Person>();
+            Person.Add(App.LoggedInUser); 
         }
     }
 }
