@@ -129,6 +129,5 @@ namespace testApplication.Views
             CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
             await c.ShowAsync();
         }
-
     }
 }

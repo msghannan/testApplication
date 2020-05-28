@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -50,6 +51,20 @@ namespace testApplication.Views
 
         private void ActiveTestsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
+            
+
+            Test selected = (Test) e.ClickedItem;
+
+            //foreach(Test t in ActiveTestsListView.SelectedItems)
+            //{
+            //    selected = t;
+            //}
+
+            foreach (Question n in selected.QuestionList)
+            {
+                testViewModel.questions.Add(n);
+            }
+
             this.Frame.Navigate(typeof(WriteTestPage));
         }
 
@@ -61,5 +76,6 @@ namespace testApplication.Views
                 testViewModel.TestListFromDatabase.Add(t);
             }
         }
+
     }
 }
