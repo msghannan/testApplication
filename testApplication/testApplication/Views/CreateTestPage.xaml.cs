@@ -29,6 +29,8 @@ namespace testApplication.Views
     {
         private TestViewModel testViewModel;
         private QuestionViewModel questionViewModel;
+        private APIServices aPIServices;
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         int TotPintsOfQuestions { get { return totPintsOfQuestions; } set { totPintsOfQuestions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotPintsOfQuestions")); } }
@@ -37,9 +39,10 @@ namespace testApplication.Views
         public CreateTestPage()
         {
             this.InitializeComponent();
-
+            aPIServices = new APIServices();
             testViewModel = new TestViewModel();
             questionViewModel = new QuestionViewModel();
+           
 
         }
 
@@ -55,6 +58,8 @@ namespace testApplication.Views
 
         private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
         {
+
+           
 
             Question Q1 = new Question();
 
@@ -75,11 +80,15 @@ namespace testApplication.Views
 
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
+
+            
+
             int lastPoint = int.Parse(QuestionPointInputTextBox.Text);
             int point = int.Parse(NumberOfPointsInfoTextBlock2.Text);
             int maxPoints = lastPoint + point;
 
             APIServices a = new APIServices();
+
             Test T1 = new Test();
 
             T1.TestName = TestNameTextbox.Text;
@@ -87,10 +96,28 @@ namespace testApplication.Views
 
             T1.QuestionList = testViewModel.QuestionList;
 
+          
+           Test t = await aPIServices.AddTestAsync(T1);
+            
+
+           await aPIServices.AddQuestonAsync(t.TestId , testViewModel.QuestionList);
+
+
+
+
+            //Question Q1 = new Question();
+            //Q1.AnswerList = testViewModel.AnswerList;
+            
+            
+
+
+            //await aPIServices.AddAnswerAsync(Q1.Id, testViewModel.AnswerList);
+
             //Anropa postrequest i APIServices och skicka T1 till metoden
             await a.AddTestAsync(T1);
             AddTestMessage();
             ClearForNewTest();
+
 
 
         }
