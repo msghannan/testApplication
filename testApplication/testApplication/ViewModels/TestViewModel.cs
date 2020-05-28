@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using testApplication.Model;
+using testApplication.Models;
 
 namespace testApplication.ViewModels
 {
@@ -12,6 +13,7 @@ namespace testApplication.ViewModels
     {
         public List<Question> QuestionList = new List<Question>();
         public List<Test> Test = new List<Test>();
+        public List<Answer> AnswerList = new List<Answer>();
 
         public TestViewModel()
         {
