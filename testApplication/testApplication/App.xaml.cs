@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.Models;
 using testApplication.Views;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -26,6 +27,13 @@ namespace testApplication
     /// </summary>
     sealed partial class App : Application
     {
+        static Person _loggedInPerson;
+        public static Person LoggedInUser
+        {
+            get { return _loggedInPerson; }
+            set { _loggedInPerson = value; }
+        }
+        
         public const string TeacherPage = "TeacherPage";
         public const string StudentPage = "StudentPage";
         /// <summary>

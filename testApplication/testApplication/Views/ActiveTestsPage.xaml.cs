@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.Model;
+using testApplication.Models;
 using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -24,12 +26,16 @@ namespace testApplication.Views
     public sealed partial class ActiveTestsPage : Page
     {
         private TestViewModel testViewModel;
+        private APIServices apiServices;
 
         public ActiveTestsPage()
         {
             this.InitializeComponent();
 
             testViewModel = new TestViewModel();
+            apiServices = new APIServices();
+
+            GetTests();
         }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
@@ -40,6 +46,20 @@ namespace testApplication.Views
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void ActiveTestsListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Frame.Navigate(typeof(WriteTestPage));
+        }
+
+        private async void GetTests()
+        {
+            var tests = await apiServices.GetActiveTests();
+            foreach (Test t in tests)
+            {
+                testViewModel.TestListFromDatabase.Add(t);
+            }
         }
     }
 }

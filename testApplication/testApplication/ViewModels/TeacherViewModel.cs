@@ -16,12 +16,19 @@ namespace testApplication.ViewModels
 
         string urlGetTeachers = "https://localhost:44363/api/Teachers";
 
-        public ObservableCollection<Teacher> TeacherList { get; set; }
+        public ObservableCollection<Person> Person { get; set; }
+
+
 
         public TeacherViewModel()
         {
             httpClient = new HttpClient();
-            TeacherList = new ObservableCollection<Teacher>();
+            Person = new ObservableCollection<Person>();
+            Person.Add(App.LoggedInUser);
+
         }
+
+
+
     }
 }

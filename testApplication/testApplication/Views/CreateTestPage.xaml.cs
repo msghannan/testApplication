@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -31,6 +32,10 @@ namespace testApplication.Views
         private APIServices aPIServices;
 
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        int TotPintsOfQuestions { get { return totPintsOfQuestions; } set { totPintsOfQuestions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotPintsOfQuestions")); } }
+        private int totPintsOfQuestions;
+
         public CreateTestPage()
         {
             this.InitializeComponent();
@@ -53,6 +58,7 @@ namespace testApplication.Views
 
         private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
         {
+
            
 
             Question Q1 = new Question();
@@ -68,16 +74,25 @@ namespace testApplication.Views
             testViewModel.QuestionList.Add(Q1);
 
             CountingQuestionsPoints();
+            ClearForNewQuestion();
 
         }
 
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
+
             
+
+            int lastPoint = int.Parse(QuestionPointInputTextBox.Text);
+            int point = int.Parse(NumberOfPointsInfoTextBlock2.Text);
+            int maxPoints = lastPoint + point;
+
+            APIServices a = new APIServices();
+
             Test T1 = new Test();
 
             T1.TestName = TestNameTextbox.Text;
-            T1.MaxPoints = int.Parse(NumberOfPointsInfoTextBlock2.Text);
+            T1.MaxPoints = maxPoints;
 
             T1.QuestionList = testViewModel.QuestionList;
 
@@ -98,22 +113,49 @@ namespace testApplication.Views
 
             //await aPIServices.AddAnswerAsync(Q1.Id, testViewModel.AnswerList);
 
+            //Anropa postrequest i APIServices och skicka T1 till metoden
+            await a.AddTestAsync(T1);
+            AddTestMessage();
+            ClearForNewTest();
+
+
 
         }
 
         private void CountingQuestionsPoints()
         {
-            int totPoints = 0;
-            int questPoint = 0;
+            int point = int.Parse(QuestionPointInputTextBox.Text);
+            totPintsOfQuestions += point;
 
-            QuestionPointInputTextBox.Text = totPoints.ToString();
-
-            totPoints += questPoint;
-
-            NumberOfPointsInfoTextBlock2.Text = questPoint.ToString();
-            
+            NumberOfPointsInfoTextBlock2.Text = totPintsOfQuestions.ToString();
         }
 
+        private void ClearForNewQuestion()
+        {
+            QuestionTextbox.Text = String.Empty;
+
+            ChoiseTextBox1.Text = String.Empty;
+            ChoiseTextBox2.Text = String.Empty;
+            ChoiseTextBox3.Text = String.Empty;
+            ChoiseTextBox4.Text = String.Empty;
+
+            QuestionPointInputTextBox.Text = String.Empty;
+
+        }
+
+        private void ClearForNewTest()
+        {
+            TestNameTextbox.Text = String.Empty;
+            NumberOfPointsInfoTextBlock2.Text = String.Empty;
+
+            ClearForNewQuestion();
+        }
+
+        private async void AddTestMessage()
+        {
+            CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
+            await c.ShowAsync();
+        }
 
     }
 }

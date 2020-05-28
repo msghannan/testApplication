@@ -147,6 +147,9 @@
     <Compile Include="Views\ContactAdminPage.xaml.cs">
       <DependentUpon>ContactAdminPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CreateNewTestMessageContentDialog.xaml.cs">
+      <DependentUpon>CreateNewTestMessageContentDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateTestPage.xaml.cs">
       <DependentUpon>CreateTestPage.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,9 @@
     <Compile Include="Views\TeacherPage.xaml.cs">
       <DependentUpon>TeacherPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\WriteTestPage.xaml.cs">
+      <DependentUpon>WriteTestPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -202,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ContactAdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CreateNewTestMessageContentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -236,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TeacherPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WriteTestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

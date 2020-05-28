@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:testApplication.Views"
+    xmlns:data="using:testApplication.Model"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -11,8 +12,9 @@
     <Grid Margin="10,10,0,0" HorizontalAlignment="Left" Width="1270" Height="710" VerticalAlignment="Top">
 
 
-        <Grid x:Name="HeaderTextGrid" Width="850" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,40,0,0">
-            <TextBlock x:Name="headerTextGridTextBlock" Text="Aktiva prov..." FontSize="70" Margin="0"/>
+        <Grid x:Name="HeaderTextGrid" Width="850" Height="111" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,29,0,0">
+            <TextBlock x:Name="HeaderTextGridTextBlock" Text="Aktiva prov..." FontSize="50" Margin="0"/>
+            <TextBlock x:Name="PressOnTestInfoTextBlock" Text="Tryck på aktivt prov för att påbörja" FontSize="35" Margin="0,55,0,5"/>
         </Grid>
 
 
@@ -20,14 +22,18 @@
 
 
         <Grid x:Name="ActiveTestsPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-            <!--<ListView x:Name="StudentResultList" ItemsSource="{x:Bind testViewModel}" IsItemClickEnabled="True" ItemClick="StudentResultList_ItemClick">
-                    <ListView.ItemTemplate>
-                        <DataTemplate x:DataType="data:Test>
+            <ListView x:Name="ActiveTestsListView" ItemsSource="{x:Bind testViewModel.TestListFromDatabase}" IsItemClickEnabled="True" ItemClick="ActiveTestsListView_ItemClick">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Test">
 
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                            <TextBlock x:Name="TestNametextBlock" Text="{x:Bind TestName}" FontSize="18" Foreground="Black"/>
+                            <TextBlock x:Name="TestDateTextBlock" Text="{x:Bind TestDate}" FontSize="18" Foreground="Black"/>
+                        </StackPanel>
 
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-            </ListView>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
 
 

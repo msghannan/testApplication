@@ -35,6 +35,7 @@ namespace testApplication.ViewModels
             //Login backend here
             APIServices _apiService = new APIServices();
             var p = await _apiService.LoginAsync(UsernameTxt, PasswordTxt);
+            App.LoggedInUser = p;
 
             if(p.Role.Teacher == true)
             {
