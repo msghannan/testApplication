@@ -62,7 +62,7 @@ namespace testApplication.Views
 
             foreach (Question n in selected.QuestionList)
             {
-                testViewModel.questions.Add(n);
+                testViewModel.ActuallyTestsQuestions.Add(n);
             }
 
             this.Frame.Navigate(typeof(WriteTestPage));

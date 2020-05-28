@@ -19,7 +19,7 @@
         
         
          <Grid x:Name="ActiveTestsPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-            <ListView x:Name="ActiveTestsListView" ItemsSource="{x:Bind testViewModel.questions}">
+            <ListView x:Name="ActiveTestsListView" ItemsSource="{x:Bind testViewModel.ActuallyTestsQuestions}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:Question">
 

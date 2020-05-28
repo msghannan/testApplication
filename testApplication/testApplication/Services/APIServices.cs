@@ -17,14 +17,11 @@ namespace testApplication.Models
 
         static HttpClient httpClient = new HttpClient();
         private static string PostUrl = "https://localhost:44363/api/Tests";
+        private static string GetTestUrl = "https://localhost:44363/api/Tests";
         private static string BaseUrl = "https://localhost:44363/api";
         private static string Accounts = "/Accounts";
         private static string PostQuestionUrl = "https://localhost:44363/api/Questions";
             
-
-        
-
-        HttpClient httpClient;
 
         public APIServices()
         {
@@ -62,10 +59,17 @@ namespace testApplication.Models
         }
 
 
-      
-        
+        public async Task<ObservableCollection<Test>> GetActiveTests()
+        {
+            var jsonTests = await httpClient.GetStringAsync(GetTestUrl);
 
-         public async Task <Test> AddTestAsync(Test t)
+            var tests = JsonConvert.DeserializeObject<ObservableCollection<Test>>(jsonTests);
+
+            return tests;
+        }
+
+
+        public async Task <Test> AddTestAsync(Test t)
         {
             using (HttpClient client = new HttpClient())
             {

@@ -25,14 +25,14 @@ namespace testApplication.ViewModels
 
         public ObservableCollection<Test> TestListFromDatabase { get; set; }
 
-        public ObservableCollection<Question> questions { get; set; }
+        public ObservableCollection<Question> ActuallyTestsQuestions { get; set; }
 
 
         public TestViewModel()
         {
             httpClient = new HttpClient();
             TestListFromDatabase = new ObservableCollection<Test>();
-            questions = new ObservableCollection<Question>();
+            ActuallyTestsQuestions = new ObservableCollection<Question>();
         }
 
 
