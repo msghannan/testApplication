@@ -24,13 +24,11 @@ namespace testApplication.Views
     public sealed partial class TeacherDetailsPage : Page
     {
         private TeacherViewModel teacherViewModel;
-        private StudentViewModel studentViewModel;
 
         public TeacherDetailsPage()
         {
             this.InitializeComponent();
 
-            studentViewModel = new StudentViewModel();
             teacherViewModel = new TeacherViewModel();
         }
 

@@ -17,10 +17,12 @@ namespace testApplication.Models
 
         static HttpClient httpClient = new HttpClient();
         private static string PostUrl = "https://localhost:44363/api/Tests";
+        private static string GetTestUrl = "https://localhost:44363/api/Tests";
         private static string BaseUrl = "https://localhost:44363/api";
         private static string Accounts = "/Accounts";
         private static string PostQuestionUrl = "https://localhost:44363/api/Questions";
             
+
 
         
 
@@ -30,6 +32,9 @@ namespace testApplication.Models
         //{
         //    httpClient = new HttpClient();
         //}
+
+       
+
 
 
         public async Task<Person> LoginAsync(string username, string password)
@@ -62,7 +67,12 @@ namespace testApplication.Models
         }
 
 
-         public async Task <Test> AddTestAsync(Test t)
+
+       
+
+
+        public async Task <Test> AddTestAsync(Test t)
+
         {
             using (HttpClient client = new HttpClient())
             {

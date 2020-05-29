@@ -27,8 +27,9 @@
                     <DataTemplate x:DataType="data:Test">
 
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                            <TextBlock x:Name="TestNametextBlock" Text="{x:Bind TestName}" FontSize="18" Foreground="Black"/>
+                            <TextBlock x:Name="TestNameTextBlock" Text="{x:Bind TestName}" FontSize="18" Foreground="Black"/>
                             <TextBlock x:Name="TestDateTextBlock" Text="{x:Bind TestDate}" FontSize="18" Foreground="Black"/>
+                            
                         </StackPanel>
 
                     </DataTemplate>

@@ -23,7 +23,6 @@ namespace testApplication.Views
     /// </summary>
     public sealed partial class MyTeachersPage : Page
     {
-        private TeacherViewModel teacherViewModel;
 
         public MyTeachersPage()
         {
@@ -31,6 +30,7 @@ namespace testApplication.Views
 
             this.vm = new TeacherViewModel();
         }
+
         public TeacherViewModel vm { get; set; }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
