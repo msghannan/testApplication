@@ -64,7 +64,7 @@ namespace testApplication.Views
             Question Q1 = new Question();
 
             Q1.Quest = QuestionTextbox.Text;
-            Q1.QuestionPoint = int.Parse(QuestionPointInputTextBox.Text);
+            //Q1.QuestionPoint = int.Parse(QuestionPointInputTextBox.Text);
 
             Q1.AnswerList.Add(new Answer(ChoiseTextBox1.Text, (bool)ChoiseCheckBox1.IsChecked));
             Q1.AnswerList.Add(new Answer(ChoiseTextBox2.Text, (bool)ChoiseCheckBox2.IsChecked));
@@ -73,7 +73,7 @@ namespace testApplication.Views
 
             testViewModel.QuestionList.Add(Q1);
 
-            CountingQuestionsPoints();
+            //CountingQuestionsPoints();
             ClearForNewQuestion();
 
         }
@@ -83,16 +83,16 @@ namespace testApplication.Views
 
             
 
-            int lastPoint = int.Parse(QuestionPointInputTextBox.Text);
-            int point = int.Parse(NumberOfPointsInfoTextBlock2.Text);
-            int maxPoints = lastPoint + point;
+            //int lastPoint = int.Parse(QuestionPointInputTextBox.Text);
+            //int point = int.Parse(NumberOfPointsInfoTextBlock2.Text);
+            //int maxPoints = lastPoint + point;
 
             APIServices a = new APIServices();
 
             Test T1 = new Test();
 
             T1.TestName = TestNameTextbox.Text;
-            T1.MaxPoints = maxPoints;
+            //T1.MaxPoints = maxPoints;
 
             T1.QuestionList = testViewModel.QuestionList;
 
@@ -107,14 +107,17 @@ namespace testApplication.Views
 
             //Question Q1 = new Question();
             //Q1.AnswerList = testViewModel.AnswerList;
+
+            //Answer A1 = new Answer();
+            //A1.Ans = testViewModel.AnswerList.ToString();
+
+
             
-            
+            //await aPIServices.AddAnswerAsync(testViewModel.AnswerList);
 
-
-            //await aPIServices.AddAnswerAsync(Q1.Id, testViewModel.AnswerList);
-
-            //Anropa postrequest i APIServices och skicka T1 till metoden
-            await a.AddTestAsync(T1);
+        
+           
+           
             AddTestMessage();
             ClearForNewTest();
 
@@ -122,13 +125,13 @@ namespace testApplication.Views
 
         }
 
-        private void CountingQuestionsPoints()
-        {
-            int point = int.Parse(QuestionPointInputTextBox.Text);
-            totPintsOfQuestions += point;
+        //private void CountingQuestionsPoints()
+        //{
+        //    int point = int.Parse(QuestionPointInputTextBox.Text);
+        //    totPintsOfQuestions += point;
 
-            NumberOfPointsInfoTextBlock2.Text = totPintsOfQuestions.ToString();
-        }
+        //    NumberOfPointsInfoTextBlock2.Text = totPintsOfQuestions.ToString();
+        //}
 
         private void ClearForNewQuestion()
         {

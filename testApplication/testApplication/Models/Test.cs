@@ -18,6 +18,7 @@ namespace testApplication.Model
 
         public Test (int testId, string testName, int maxPoints, DateTime testDate)
         {
+            QuestionList = new List<Question>();
             this.TestId = testId;
             this.TestName = testName;
             this.MaxPoints = maxPoints;

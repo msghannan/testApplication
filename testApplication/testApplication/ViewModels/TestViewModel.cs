@@ -25,6 +25,7 @@ namespace testApplication.ViewModels
         {
             httpClient = new HttpClient();
             TestListFromDatabase = new ObservableCollection<Test>();
+            QuestionList = new List<Question>();
         }
 
 
