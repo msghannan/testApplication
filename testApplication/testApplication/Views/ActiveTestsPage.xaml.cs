@@ -70,11 +70,11 @@ namespace testApplication.Views
 
         private async void GetTests()
         {
-            var tests = await apiServices.GetActiveTests();
-            foreach (Test t in tests)
-            {
-                testViewModel.TestListFromDatabase.Add(t);
-            }
+            //var tests = await apiServices.GetActiveTests();
+            //foreach (Test t in tests)
+            //{
+            //    testViewModel.TestListFromDatabase.Add(t);
+            //}
         }
 
     }
