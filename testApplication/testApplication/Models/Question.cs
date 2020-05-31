@@ -13,10 +13,10 @@ namespace testApplication.Model
         public int Id { get; set; }
         public string Quest { get; set; }
 
-        public int TestId { get; set; }
+        public int TestID { get; set; }
         public int QuestionPoint { get; set; }
 
-        public List<Answer> AnswerList = new List<Answer>();
+        public List<Answer> Answers { get; set; }
 
         public Question (string question, int questionPoint)
         {
@@ -26,6 +26,7 @@ namespace testApplication.Model
 
         public Question()
         {
+            Answers = new List<Answer>();
 
         }
         
