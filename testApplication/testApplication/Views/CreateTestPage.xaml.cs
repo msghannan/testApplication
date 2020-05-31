@@ -30,6 +30,7 @@ namespace testApplication.Views
         private TestViewModel testViewModel;
         private QuestionViewModel questionViewModel;
         private APIServices aPIServices;
+        public Test exam { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -41,8 +42,10 @@ namespace testApplication.Views
             this.InitializeComponent();
             aPIServices = new APIServices();
             testViewModel = new TestViewModel();
-            questionViewModel = new QuestionViewModel();
-           
+            exam = new Test();
+
+
+
 
         }
 
@@ -59,66 +62,37 @@ namespace testApplication.Views
         private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
         {
 
-           
 
-            Question Q1 = new Question();
 
-            Q1.Quest = QuestionTextbox.Text;
+            Question question = new Question();
+
+            question.Quest = QuestionTextbox.Text;
             //Q1.QuestionPoint = int.Parse(QuestionPointInputTextBox.Text);
+            question.Answers = testViewModel.AnswerList;
+            question.Answers.Add(new Answer(ChoiseTextBox1.Text, (bool)ChoiseCheckBox1.IsChecked));
+            question.Answers.Add(new Answer(ChoiseTextBox2.Text, (bool)ChoiseCheckBox2.IsChecked));
+            question.Answers.Add(new Answer(ChoiseTextBox3.Text, (bool)ChoiseCheckBox3.IsChecked));
+            question.Answers.Add(new Answer(ChoiseTextBox4.Text, (bool)ChoiseCheckBox4.IsChecked));
 
-            Q1.AnswerList.Add(new Answer(ChoiseTextBox1.Text, (bool)ChoiseCheckBox1.IsChecked));
-            Q1.AnswerList.Add(new Answer(ChoiseTextBox2.Text, (bool)ChoiseCheckBox2.IsChecked));
-            Q1.AnswerList.Add(new Answer(ChoiseTextBox3.Text, (bool)ChoiseCheckBox3.IsChecked));
-            Q1.AnswerList.Add(new Answer(ChoiseTextBox4.Text, (bool)ChoiseCheckBox4.IsChecked));
 
-            testViewModel.QuestionList.Add(Q1);
+            exam.Questions.Add(question);
+
 
             //CountingQuestionsPoints();
+
+
             ClearForNewQuestion();
 
         }
 
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
+            exam.TestName = TestNameTextbox.Text;
+            exam.TestDate = DateTime.Now;
+            var t = await aPIServices.AddTestAsync(exam);
 
-            
-
-            //int lastPoint = int.Parse(QuestionPointInputTextBox.Text);
-            //int point = int.Parse(NumberOfPointsInfoTextBlock2.Text);
-            //int maxPoints = lastPoint + point;
-
-            APIServices a = new APIServices();
-
-            Test T1 = new Test();
-
-            T1.TestName = TestNameTextbox.Text;
-            //T1.MaxPoints = maxPoints;
-
-            T1.QuestionList = testViewModel.QuestionList;
-
-          
-           Test t = await aPIServices.AddTestAsync(T1);
-            
-
-           await aPIServices.AddQuestonAsync(t.TestId , testViewModel.QuestionList);
-
-
-
-
-            //Question Q1 = new Question();
-            //Q1.AnswerList = testViewModel.AnswerList;
-
-            //Answer A1 = new Answer();
-            //A1.Ans = testViewModel.AnswerList.ToString();
-
-
-            
-            //await aPIServices.AddAnswerAsync(testViewModel.AnswerList);
-
-        
-           
-           
             AddTestMessage();
+
             ClearForNewTest();
 
 

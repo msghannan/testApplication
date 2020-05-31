@@ -9,17 +9,17 @@ namespace testApplication.Model
 {
     public class Test
     {
-        public int TestId { get; set; }
+        public int ID { get; set; }
         public string TestName { get; set; }
         public int MaxPoints { get; set; }
         public DateTime TestDate { get; set; }
 
-        public List<Question> QuestionList = new List<Question>();
+        public List<Question> Questions { get; set; }
 
         public Test (int testId, string testName, int maxPoints, DateTime testDate)
         {
-            QuestionList = new List<Question>();
-            this.TestId = testId;
+            Questions = new List<Question>();
+            this.ID = testId;
             this.TestName = testName;
             this.MaxPoints = maxPoints;
             this.TestDate = testDate; 
@@ -27,7 +27,7 @@ namespace testApplication.Model
 
         public Test()
         {
-
+            Questions = new List<Question>();
         }
        
     }
