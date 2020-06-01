@@ -16,10 +16,10 @@
             <TextBlock x:Name="HeaderTextGridTextBlock" Text="Prov sidan" FontSize="50" Margin="0"/>
             <TextBlock x:Name="PressOnTestInfoTextBlock" Text="Lycka till!" FontSize="35" Margin="0,55,0,5"/>
         </Grid>
-        
-        
-         <Grid x:Name="ActiveTestsPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-            <ListView x:Name="ActiveTestsListView" ItemsSource="{x:Bind testViewModel.ActuallyTestsQuestions}">
+
+
+        <Grid x:Name="ActiveTestsPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
+            <!--<ListView x:Name="ActiveTestsListView" ItemsSource="{x:Bind testViewModel.QuestionList}">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="data:Question">
 
@@ -29,7 +29,16 @@
 
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
+
+            <TextBlock Text="{x:Bind testViewModel.CurrentlyQuestion.Quest, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
+            <StackPanel>
+
+                <CheckBox x:Name="Answer1" IsChecked="{x:Bind testViewModel.Answer1IsChecked, Mode=TwoWay}" Content="{x:Bind testViewModel.CurrentlyQuestion.Answers[0].AnswerText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="Answer2" IsChecked="{x:Bind testViewModel.Answer2IsChecked, Mode=TwoWay}" Content="{x:Bind testViewModel.CurrentlyQuestion.Answers[1].AnswerText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="Answer3" IsChecked="{x:Bind testViewModel.Answer3IsChecked, Mode=TwoWay}" Content="{x:Bind testViewModel.CurrentlyQuestion.Answers[2].AnswerText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <CheckBox x:Name="Answer4" IsChecked="{x:Bind testViewModel.Answer4IsChecked, Mode=TwoWay}" Content="{x:Bind testViewModel.CurrentlyQuestion.Answers[3].AnswerText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
         </Grid>
 
 
@@ -43,10 +52,21 @@
 
 
 
-        <Grid x:Name="SideGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
+        <!--<Grid x:Name="SideGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
             <Button x:Name="BackButton" Content="Tillbaka" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="0,330,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Click="BackButton_Click"/>
             <Button x:Name="AddQuestionButton" Content="Lämna in!" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-            <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
+            -->
+        <!--<Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>-->
+        <!--
+        </Grid>-->
+
+        <Grid x:Name="SideGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
+            <StackPanel VerticalAlignment="Stretch">
+                <Button x:Name="AddQuestionButton" Content="Lämna in!" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <Button x:Name="NextBtn" Content="Nästa Fråga" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" VerticalAlignment="Top" HorizontalAlignment="Center" Command="{x:Bind testViewModel.NextBtnCmd}"/>
+                <Button x:Name="BackButton" Content="Tillbaka" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" VerticalAlignment="Bottom" HorizontalAlignment="Center" Click="BackButton_Click"/>
+                <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" VerticalAlignment="Bottom" Height="70" Width="165" Margin="0,0,0,10" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
+            </StackPanel>
         </Grid>
 
     </Grid>

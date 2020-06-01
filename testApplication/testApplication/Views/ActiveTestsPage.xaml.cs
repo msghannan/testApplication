@@ -50,21 +50,15 @@ namespace testApplication.Views
 
         private void ActiveTestsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            Test selectedItem = (Test) e.ClickedItem;
+            //testViewModel.QuestionList 
 
-            Test selected = (Test) e.ClickedItem;
-
-            //foreach(Test t in ActiveTestsListView.SelectedItems)
-            //{
-            //    selected = t;
-            //}
-
-            foreach (Question n in selected.Questions)
+            foreach (Question quest in selectedItem.Questions)
             {
-                testViewModel.ActuallyTestsQuestions.Add(n);
+                testViewModel.QuestionList.Add(quest);
             }
 
-            this.Frame.Navigate(typeof(WriteTestPage));
+            this.Frame.Navigate(typeof(WriteTestPage),(Test)selectedItem);
         }
 
         public async void GetTests()
@@ -74,7 +68,6 @@ namespace testApplication.Views
             {
                 testViewModel.TestListFromDatabase.Add(t);
             }
-
 
         }
 

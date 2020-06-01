@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.Model;
+using testApplication.Models;
 using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -24,6 +26,7 @@ namespace testApplication.Views
     public sealed partial class WriteTestPage : Page
     {
         private TestViewModel testViewModel;
+        public Question questionObject;
 
         public WriteTestPage()
         {
@@ -40,6 +43,22 @@ namespace testApplication.Views
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var selectedItem = (Test)e?.Parameter;
+
+            foreach (Question question in selectedItem.Questions)
+            {
+                testViewModel.QuestionList.Add(question);
+                questionObject = question;
+                foreach (Answer answer in questionObject.Answers)
+                {
+                    testViewModel.AnswerList.Add(answer);
+                }
+            }
+
+            testViewModel.CurrentlyQuestion = testViewModel.QuestionList[0];
         }
     }
 }
