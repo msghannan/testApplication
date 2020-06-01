@@ -28,7 +28,7 @@
 
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
                             <TextBlock x:Name="TestNameTextBlock" Text="{x:Bind TestName}" FontSize="18" Foreground="Black"/>
-                            <TextBlock x:Name="TestDateTextBlock" Text="{x:Bind TestDate}" FontSize="18" Foreground="Black"/>
+                            <TextBlock x:Name="TestDateTextBlock" Text="{x:Bind Date}" FontSize="18" Foreground="Black"/>
                             
                         </StackPanel>
 

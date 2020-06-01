@@ -16,6 +16,5 @@ namespace testApplication.Models
         public char Title { get; set; }
         public Account Account { get; set; }
         public Role Role { get; set; }
-
     }
 }

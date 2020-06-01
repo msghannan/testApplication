@@ -22,21 +22,7 @@ namespace testApplication.Models
         private static string Accounts = "/Accounts";
         private static string PostQuestionUrl = "https://localhost:44363/api/Questions";
         private static string PostAnswerUrl = "https://localhost:44363/api/Answers";
-
-
-
-
-
-        //HttpClient httpClient;
-
-        //public APIServices()
-        //{
-        //    httpClient = new HttpClient();
-        //}
-
-       
-
-
+        
 
         public async Task<Person> LoginAsync(string username, string password)
         {
@@ -63,17 +49,9 @@ namespace testApplication.Models
             {
                 Console.WriteLine(e.Message);
             }
-
             return p;
         }
-
-
-
-       
-
-
         public async Task <Test> AddTestAsync(Test t)
-
         {
             using (HttpClient client = new HttpClient())
             {
@@ -85,17 +63,11 @@ namespace testApplication.Models
 
                 string p = await result.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<Test>(p);
-
             }
 
          }
-
-
         public async Task <Question> AddQuestonAsync(int a, List<Question> questionList)
-
         {
-            
-            
                 List<Question> q = questionList;
                 //for (int i = 0; i < questionList.Count; i++)
                 //{
@@ -113,17 +85,6 @@ namespace testApplication.Models
                 return JsonConvert.DeserializeObject<Question>(p);
 
         }
-
-        //    List<PizzaOrder> temp = new List<PizzaOrder>();
-
-        //        foreach (var piz in pizzalist)
-        //        {
-        //            temp.Add(new PizzaOrder() { OrderId = a, PizzaId = piz.Id });
-        //        }
-        //var order = JsonConvert.SerializeObject(temp);
-        //HttpContent httpContent = new StringContent(order);
-        //httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-        //await httpClient.PostAsync(url + "PizzaOrders", httpContent);
         public async Task AddAnswerAsync(int a, List<Answer> answerList)
 
         {
@@ -133,19 +94,22 @@ namespace testApplication.Models
                 l[i].QuestionId = a;
             }
 
-
             var ans = JsonConvert.SerializeObject(answerList);
             HttpContent httpContent = new StringContent(ans);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             await httpClient.PostAsync(PostAnswerUrl, httpContent);
-
-
         }
+        public async Task<ObservableCollection<Test>> GetAllExamsAsync()
+        {
+            var jsonTests = await httpClient.GetStringAsync(BaseUrl + "/Tests");
 
+            JsonSerializerSettings settings = new JsonSerializerSettings();
+            settings.MissingMemberHandling = MissingMemberHandling.Error;
 
+            var tests = JsonConvert.DeserializeObject<ObservableCollection<Test>>(jsonTests, settings);
 
-
-
+            return tests;
+        }
 
     }
 }

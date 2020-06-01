@@ -129,14 +129,10 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentsResults.cs" />
     <Compile Include="Models\Teacher.cs" />
-    <Compile Include="ViewModels\AccountLoginViewModel.cs" />
-    <Compile Include="ViewModels\AnsweViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="Services\APIServices.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Test.cs" />
-    <Compile Include="ViewModels\PersonViewModel.cs" />
-    <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="ViewModels\StudentsResultsViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
     <Compile Include="ViewModels\TeacherViewModel.cs" />

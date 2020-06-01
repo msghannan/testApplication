@@ -6,7 +6,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using testApplication.Model;
 using testApplication.Models;
-using testApplication.ViewModel;
 using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -28,7 +27,6 @@ namespace testApplication.Views
     public sealed partial class CreateTestPage : Page
     {
         private TestViewModel testViewModel;
-        private QuestionViewModel questionViewModel;
         private APIServices aPIServices;
         public Test exam { get; set; }
         public int Number { get; set; }
@@ -90,7 +88,7 @@ namespace testApplication.Views
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
             exam.TestName = TestNameTextbox.Text;
-            exam.TestDate = System.DateTime.Now;
+            exam.Date = System.DateTime.Now;
             var t = await aPIServices.AddTestAsync(exam);
 
             //AddTestMessage();

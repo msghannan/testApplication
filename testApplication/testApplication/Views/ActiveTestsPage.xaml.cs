@@ -35,7 +35,6 @@ namespace testApplication.Views
 
             testViewModel = new TestViewModel();
             apiServices = new APIServices();
-
             GetTests();
         }
 
@@ -68,13 +67,15 @@ namespace testApplication.Views
             this.Frame.Navigate(typeof(WriteTestPage));
         }
 
-        private async void GetTests()
+        public async void GetTests()
         {
-            //var tests = await apiServices.GetActiveTests();
-            //foreach (Test t in tests)
-            //{
-            //    testViewModel.TestListFromDatabase.Add(t);
-            //}
+            var tests = await apiServices.GetAllExamsAsync();
+            foreach (Test t in tests)
+            {
+                testViewModel.TestListFromDatabase.Add(t);
+            }
+
+
         }
 
     }
