@@ -97,10 +97,10 @@ namespace testApplication.Models
             
             
                 List<Question> q = questionList;
-                for (int i = 0; i < questionList.Count; i++)
-                {
-                    q[i].TestID = a;
-                }
+                //for (int i = 0; i < questionList.Count; i++)
+                //{
+                //    q[i].TestID = a;
+                //}
 
                 var quest = JsonConvert.SerializeObject(q);
                 HttpContent httpContent = new StringContent(quest);
@@ -111,13 +111,6 @@ namespace testApplication.Models
                 string p = await result.Content.ReadAsStringAsync();
 
                 return JsonConvert.DeserializeObject<Question>(p);
-
-               
-            
-            
-
-           
-
 
         }
 

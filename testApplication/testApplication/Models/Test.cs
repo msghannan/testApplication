@@ -16,14 +16,14 @@ namespace testApplication.Model
 
         public List<Question> Questions { get; set; }
 
-        public Test (int testId, string testName, int maxPoints, DateTime testDate)
-        {
-            Questions = new List<Question>();
-            this.ID = testId;
-            this.TestName = testName;
-            this.MaxPoints = maxPoints;
-            this.TestDate = testDate; 
-        }
+        //public Test (int testId, string testName, int maxPoints, DateTime testDate)
+        //{
+        //    Questions = new List<Question>();
+        //    this.ID = testId;
+        //    this.TestName = testName;
+        //    this.MaxPoints = maxPoints;
+        //    this.TestDate = testDate; 
+        //}
 
         public Test()
         {

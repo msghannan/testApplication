@@ -12,17 +12,15 @@ namespace testApplication.Model
     {
         public int Id { get; set; }
         public string Quest { get; set; }
-
-        public int TestID { get; set; }
         public int QuestionPoint { get; set; }
 
         public List<Answer> Answers { get; set; }
 
-        public Question (string question, int questionPoint)
-        {
-            this.Quest = question;
-            this.QuestionPoint = questionPoint;
-        }
+        //public Question (string question, int questionPoint)
+        //{
+        //    this.Quest = question;
+        //    this.QuestionPoint = questionPoint;
+        //}
 
         public Question()
         {

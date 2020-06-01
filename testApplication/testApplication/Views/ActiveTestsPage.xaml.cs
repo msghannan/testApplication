@@ -60,7 +60,7 @@ namespace testApplication.Views
             //    selected = t;
             //}
 
-            foreach (Question n in selected.QuestionList)
+            foreach (Question n in selected.Questions)
             {
                 testViewModel.ActuallyTestsQuestions.Add(n);
             }

@@ -31,6 +31,7 @@ namespace testApplication.Views
         private QuestionViewModel questionViewModel;
         private APIServices aPIServices;
         public Test exam { get; set; }
+        public int Number { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -43,7 +44,7 @@ namespace testApplication.Views
             aPIServices = new APIServices();
             testViewModel = new TestViewModel();
             exam = new Test();
-
+            Number = 0;
 
 
 
@@ -65,18 +66,19 @@ namespace testApplication.Views
 
 
             Question question = new Question();
+            //question.Answers = testViewModel.AnswerList;
 
-            question.Quest = QuestionTextbox.Text;
-            //Q1.QuestionPoint = int.Parse(QuestionPointInputTextBox.Text);
-            question.Answers = testViewModel.AnswerList;
             question.Answers.Add(new Answer(ChoiseTextBox1.Text, (bool)ChoiseCheckBox1.IsChecked));
             question.Answers.Add(new Answer(ChoiseTextBox2.Text, (bool)ChoiseCheckBox2.IsChecked));
             question.Answers.Add(new Answer(ChoiseTextBox3.Text, (bool)ChoiseCheckBox3.IsChecked));
             question.Answers.Add(new Answer(ChoiseTextBox4.Text, (bool)ChoiseCheckBox4.IsChecked));
 
 
-            exam.Questions.Add(question);
+            //question.Answers.Clear();
+            //exam.Questions.Clear();
+            question.Quest = QuestionTextbox.Text;
 
+            exam.Questions.Add(question);
 
             //CountingQuestionsPoints();
 
@@ -88,10 +90,10 @@ namespace testApplication.Views
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
             exam.TestName = TestNameTextbox.Text;
-            exam.TestDate = DateTime.Now;
+            exam.TestDate = System.DateTime.Now;
             var t = await aPIServices.AddTestAsync(exam);
 
-            AddTestMessage();
+            //AddTestMessage();
 
             ClearForNewTest();
 
@@ -109,14 +111,14 @@ namespace testApplication.Views
 
         private void ClearForNewQuestion()
         {
-            QuestionTextbox.Text = String.Empty;
+            QuestionTextbox.Text = "";
 
-            ChoiseTextBox1.Text = String.Empty;
-            ChoiseTextBox2.Text = String.Empty;
-            ChoiseTextBox3.Text = String.Empty;
-            ChoiseTextBox4.Text = String.Empty;
+            ChoiseTextBox1.Text = "";
+            ChoiseTextBox2.Text = "";
+            ChoiseTextBox3.Text = "";
+            ChoiseTextBox4.Text = "";
 
-            QuestionPointInputTextBox.Text = String.Empty;
+            QuestionPointInputTextBox.Text = "";
 
         }
 
@@ -128,10 +130,10 @@ namespace testApplication.Views
             ClearForNewQuestion();
         }
 
-        private async void AddTestMessage()
-        {
-            CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
-            await c.ShowAsync();
-        }
+        //private async void AddTestMessage()
+        //{
+        //    CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
+        //    await c.ShowAsync();
+        //}
     }
 }
