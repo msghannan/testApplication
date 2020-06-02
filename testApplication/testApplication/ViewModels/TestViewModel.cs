@@ -17,7 +17,6 @@ namespace testApplication.ViewModels
 {
     public class TestViewModel : ViewModelBase
     {
-        HttpClient httpClient;
 
         public ObservableCollection<Question> QuestionList = new ObservableCollection<Question>();
 
@@ -31,7 +30,14 @@ namespace testApplication.ViewModels
 
 
         public int Counter { get; set; }
+
         public int Points { get; set; }
+
+        public string NumberActuallyOfQuestion
+        {
+            get { return "Fråga nr: " + " / " + QuestionList.Count; }
+        }
+
 
         public List<Test> Test = new List<Test>();
         public List<Answer> AnswerList = new List<Answer>();
@@ -61,7 +67,6 @@ namespace testApplication.ViewModels
             if(QuestionList?.Count > 0)
             {
                 CurrentlyQuestion = QuestionList[Counter];
-
             }
         }
 

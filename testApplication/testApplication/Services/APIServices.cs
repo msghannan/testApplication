@@ -17,6 +17,7 @@ namespace testApplication.Models
 
         static HttpClient httpClient = new HttpClient();
         private static string PostUrl = "https://localhost:44363/api/Tests";
+        private static string urlGetStudentsResults = "https://localhost:44363/api/StudentsResults";
         private static string GetTestUrl = "https://localhost:44363/api/Tests";
         private static string BaseUrl = "https://localhost:44363/api";
         private static string Accounts = "/Accounts";
@@ -86,7 +87,6 @@ namespace testApplication.Models
 
         }
         public async Task AddAnswerAsync(int a, List<Answer> answerList)
-
         {
             List<Answer> l = answerList;
             for (int i = 0; i < answerList.Count; i++)
@@ -99,6 +99,7 @@ namespace testApplication.Models
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             await httpClient.PostAsync(PostAnswerUrl, httpContent);
         }
+
         public async Task<ObservableCollection<Test>> GetAllExamsAsync()
         {
             var jsonTests = await httpClient.GetStringAsync(BaseUrl + "/Tests");
@@ -109,6 +110,20 @@ namespace testApplication.Models
             var tests = JsonConvert.DeserializeObject<ObservableCollection<Test>>(jsonTests, settings);
 
             return tests;
+        }
+
+        public async void GetStudentsResults()
+        {
+            StudentsResultsViewModel studentsResultsViewModel = new StudentsResultsViewModel();
+
+            var jsonGetStudentsResults = await httpClient.GetStringAsync(urlGetStudentsResults);
+
+            var studentResults = JsonConvert.DeserializeObject<ObservableCollection<StudentsResults>>(jsonGetStudentsResults);
+
+            foreach (StudentsResults a in studentResults)
+            {
+                studentsResultsViewModel.StudentResultList.Add(a);
+            }
         }
 
     }

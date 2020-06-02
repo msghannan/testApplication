@@ -26,7 +26,8 @@ namespace testApplication.Views
     public sealed partial class WriteTestPage : Page
     {
         private TestViewModel testViewModel;
-        public Question questionObject;
+        private Question questionObject;
+
 
         public WriteTestPage()
         {
@@ -40,10 +41,6 @@ namespace testApplication.Views
             this.Frame.Navigate(typeof(MainPage));
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.GoBack();
-        }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var selectedItem = (Test)e?.Parameter;
@@ -59,6 +56,16 @@ namespace testApplication.Views
             }
 
             testViewModel.CurrentlyQuestion = testViewModel.QuestionList[0];
+        }
+
+        private void SignOutButton_Click_1(object sender, RoutedEventArgs e)
+        {
+             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
