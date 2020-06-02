@@ -28,13 +28,17 @@ namespace testApplication.Views
     {
         private TestViewModel testViewModel;
         private APIServices aPIServices;
+
         public Test exam { get; set; }
         public int Number { get; set; }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
-        int TotPintsOfQuestions { get { return totPintsOfQuestions; } set { totPintsOfQuestions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotPintsOfQuestions")); } }
-        private int totPintsOfQuestions;
+        int TotPointsOfQuestions { get { return totPointsOfQuestions; } set { totPointsOfQuestions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TotPointsOfQuestions")); } }
+        private int totPointsOfQuestions;
+
+        int NumberOfQuestions { get { return numberOfQuestions; } set { numberOfQuestions = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NumberOfQuestions")); } }
+        private int numberOfQuestions = 0;
 
         public CreateTestPage()
         {
@@ -43,9 +47,6 @@ namespace testApplication.Views
             testViewModel = new TestViewModel();
             exam = new Test();
             Number = 0;
-
-
-
         }
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
@@ -60,26 +61,11 @@ namespace testApplication.Views
 
         private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
         {
+            AddQuestion();
 
+            CountingNumberOfQuestions();
 
-
-            Question question = new Question();
-            //question.Answers = testViewModel.AnswerList;
-
-            question.Answers.Add(new Answer(ChoiseTextBox1.Text, (bool)ChoiseCheckBox1.IsChecked));
-            question.Answers.Add(new Answer(ChoiseTextBox2.Text, (bool)ChoiseCheckBox2.IsChecked));
-            question.Answers.Add(new Answer(ChoiseTextBox3.Text, (bool)ChoiseCheckBox3.IsChecked));
-            question.Answers.Add(new Answer(ChoiseTextBox4.Text, (bool)ChoiseCheckBox4.IsChecked));
-
-
-            //question.Answers.Clear();
-            //exam.Questions.Clear();
-            question.Quest = QuestionTextbox.Text;
-
-            exam.Questions.Add(question);
-
-            //CountingQuestionsPoints();
-
+            CountingQuestionsPoints();
 
             ClearForNewQuestion();
 
@@ -87,37 +73,60 @@ namespace testApplication.Views
 
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
+            AddQuestion();
+
+            CountingNumberOfQuestions();
+
             exam.TestName = TestNameTextbox.Text;
             exam.Date = System.DateTime.Now;
+            exam.MaxPoints = int.Parse(NumberOfPointsInfoTextBlock2.Text);
+            exam.NumberOfQuestions = int.Parse(NumberOfWuestionsInfoTextBlock2.Text);
             var t = await aPIServices.AddTestAsync(exam);
 
-            //AddTestMessage();
+            AddTestMessage();
 
             ClearForNewTest();
-
-
-
         }
 
-        //private void CountingQuestionsPoints()
-        //{
-        //    int point = int.Parse(QuestionPointInputTextBox.Text);
-        //    totPintsOfQuestions += point;
+        private void AddQuestion()
+        {
+            Question question = new Question();
 
-        //    NumberOfPointsInfoTextBlock2.Text = totPintsOfQuestions.ToString();
-        //}
+            question.Answers.Add(new Answer(ChoiseTextBox1.Text, (bool)ChoiseCheckBox1.IsChecked));
+            question.Answers.Add(new Answer(ChoiseTextBox2.Text, (bool)ChoiseCheckBox2.IsChecked));
+            question.Answers.Add(new Answer(ChoiseTextBox3.Text, (bool)ChoiseCheckBox3.IsChecked));
+            question.Answers.Add(new Answer(ChoiseTextBox4.Text, (bool)ChoiseCheckBox4.IsChecked));
+
+            question.QuestionPoint = int.Parse(QuestionPointInputTextBox.Text);
+            question.Quest = QuestionTextbox.Text;
+
+            exam.Questions.Add(question);
+        }
+
+        private void CountingNumberOfQuestions()
+        {
+            numberOfQuestions += 1;
+
+            NumberOfWuestionsInfoTextBlock2.Text = numberOfQuestions.ToString();
+        }
+        private void CountingQuestionsPoints()
+        {
+            int point = int.Parse(QuestionPointInputTextBox.Text);
+            totPointsOfQuestions += point;
+
+            NumberOfPointsInfoTextBlock2.Text = totPointsOfQuestions.ToString();
+        }
 
         private void ClearForNewQuestion()
         {
-            QuestionTextbox.Text = "";
+            QuestionTextbox.Text = String.Empty;
 
-            ChoiseTextBox1.Text = "";
-            ChoiseTextBox2.Text = "";
-            ChoiseTextBox3.Text = "";
-            ChoiseTextBox4.Text = "";
+            ChoiseTextBox1.Text = String.Empty;
+            ChoiseTextBox2.Text = String.Empty;
+            ChoiseTextBox3.Text = String.Empty;
+            ChoiseTextBox4.Text = String.Empty;
 
-            QuestionPointInputTextBox.Text = "";
-
+            QuestionPointInputTextBox.Text = String.Empty;
         }
 
         private void ClearForNewTest()
@@ -128,10 +137,10 @@ namespace testApplication.Views
             ClearForNewQuestion();
         }
 
-        //private async void AddTestMessage()
-        //{
-        //    CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
-        //    await c.ShowAsync();
-        //}
+        private async void AddTestMessage()
+        {
+            CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
+            await c.ShowAsync();
+        }
     }
 }
