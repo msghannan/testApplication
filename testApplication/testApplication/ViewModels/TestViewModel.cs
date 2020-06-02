@@ -33,9 +33,11 @@ namespace testApplication.ViewModels
 
         public int Points { get; set; }
 
-        public string NumberActuallyOfQuestion
+        public string _numberOfCurrentlyQuestion { get; set; }
+        public string NumberOfCurrentlyQuestion
         {
-            get { return "Fråga nr: " + " / " + QuestionList.Count; }
+            get { return _numberOfCurrentlyQuestion;  }
+            set { _numberOfCurrentlyQuestion = value; }
         }
 
 
@@ -67,17 +69,21 @@ namespace testApplication.ViewModels
             if(QuestionList?.Count > 0)
             {
                 CurrentlyQuestion = QuestionList[Counter];
+                NumberOfCurrentlyQuestion = "Fråga nr: " + (Counter + 1) + " / " + QuestionList.Count;
+                RaisePropertyChanged(nameof(NumberOfCurrentlyQuestion));
             }
         }
 
         private void NextQuestion()
         {
-            Counter++;
             CalculatePoints();
             if (Counter < QuestionList.Count)
             {
                 CurrentlyQuestion = QuestionList[Counter];
+                NumberOfCurrentlyQuestion = "Fråga nr: " + (Counter + 1) + " / " + QuestionList.Count; 
                 RaisePropertyChanged(nameof(CurrentlyQuestion));
+                RaisePropertyChanged(nameof(NumberOfCurrentlyQuestion));
+                Counter++;
             }
         }
 
