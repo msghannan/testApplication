@@ -68,13 +68,12 @@ namespace testApplication.Views
             CountingQuestionsPoints();
 
             ClearForNewQuestion();
-
         }
 
         private async void AddTestButton_Click(object sender, RoutedEventArgs e)
         {
             AddQuestion();
-
+            CountingQuestionsPoints();
             CountingNumberOfQuestions();
 
             exam.TestName = TestNameTextbox.Text;
