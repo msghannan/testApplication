@@ -14,13 +14,18 @@ namespace testApplication.Models
         public string StudentLastName { get; set; }
         public string Grade { get; set; }
 
-        public StudentsResults(int resultId, string testName, string studentFirstName, string studentLastName, string grade)
+        public StudentsResults(int resultId, string testName,string studentFirstName, string studentLastName, string grade)
         {
             this.ResultId = resultId;
             this.TestName = testName;
             this.StudentFirstName = studentFirstName;
             this.StudentLastName = studentLastName;
             this.Grade = grade;
+        }
+
+        public StudentsResults()
+        {
+
         }
     }
 }

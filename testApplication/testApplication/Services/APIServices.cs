@@ -23,7 +23,9 @@ namespace testApplication.Models
         private static string Accounts = "/Accounts";
         private static string PostQuestionUrl = "https://localhost:44363/api/Questions";
         private static string PostAnswerUrl = "https://localhost:44363/api/Answers";
-        
+        private static string PostStudentsResultsUrl = "https://localhost:44363/api/api/StudentsResults";
+
+
 
         public async Task<Person> LoginAsync(string username, string password)
         {
@@ -124,6 +126,15 @@ namespace testApplication.Models
             {
                 studentsResultsViewModel.StudentResultList.Add(a);
             }
+        }
+
+        public async void PostStudentsResults(StudentsResults results)
+        {
+            var result = JsonConvert.SerializeObject(results);
+            HttpContent httpContent = new StringContent(result);
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            await httpClient.PostAsync(PostStudentsResultsUrl, httpContent);
         }
 
     }

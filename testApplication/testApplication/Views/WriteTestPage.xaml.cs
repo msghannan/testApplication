@@ -27,6 +27,12 @@ namespace testApplication.Views
     {
         private TestViewModel testViewModel;
         private Question questionObject;
+        private StudentViewModel studentViewModel;
+        private Person person;
+        private APIServices aPIServices;
+        private StudentsResultsViewModel studentsResultsViewModel;
+
+        public StudentsResults studentsResults { get; set; }
 
 
         public WriteTestPage()
@@ -34,6 +40,13 @@ namespace testApplication.Views
             this.InitializeComponent();
 
             testViewModel = new TestViewModel();
+            studentViewModel = new StudentViewModel();
+            person = new Person();
+            aPIServices = new APIServices();
+            studentsResults = new StudentsResults();
+            studentViewModel = new StudentViewModel();
+
+            //BringTestInfo();
         }
 
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
@@ -63,9 +76,25 @@ namespace testApplication.Views
              this.Frame.Navigate(typeof(MainPage));
         }
 
-        private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
+        private async void SendTestButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            //studentsResultsViewModel.StudentResultList.Add(new StudentsResults(person.FirstName, person.LastName, testViewModel.Points.ToString()));
+            //await aPIServices.PostStudentsResults();
         }
+
+        //private void SendTestButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    BringTestInfo();
+        //    aPIServices.PostStudentsResults(studentsResults);
+        //}
+
+        //public void BringTestInfo()
+        //{
+        //    studentsResults.Grade = testViewModel.Points.ToString();
+        //    studentsResults.StudentFirstName = person.FirstName;
+        //    studentsResults.StudentLastName = person.LastName;
+        //}
+
+
     }
 }
