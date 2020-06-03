@@ -6,11 +6,12 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using testApplication.Model;
 using testApplication.Models;
 
 namespace testApplication.ViewModels
 {
-    class StudentsResultsViewModel
+    public class StudentsResultsViewModel
     {
         public ObservableCollection<StudentsResults> StudentResultList { get; set; }
 
@@ -18,5 +19,6 @@ namespace testApplication.ViewModels
         {
             StudentResultList = new ObservableCollection<StudentsResults>();
         }
+
     }
 }

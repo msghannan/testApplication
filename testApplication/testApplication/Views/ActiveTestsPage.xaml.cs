@@ -28,6 +28,8 @@ namespace testApplication.Views
     {
         private TestViewModel testViewModel;
         private APIServices apiServices;
+        private StudentsResultsViewModel studentsResultsViewModel;
+        private WriteTestPage writeTestPage;
 
         public ActiveTestsPage()
         {
@@ -35,6 +37,9 @@ namespace testApplication.Views
 
             testViewModel = new TestViewModel();
             apiServices = new APIServices();
+            studentsResultsViewModel = new StudentsResultsViewModel();
+            writeTestPage = new WriteTestPage();
+
             GetTests();
         }
 
@@ -51,7 +56,8 @@ namespace testApplication.Views
         private void ActiveTestsListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             Test selectedItem = (Test) e.ClickedItem;
-            //testViewModel.QuestionList 
+
+            //writeTestPage.BringTestInfo(((Test)e.ClickedItem).TestName);
 
             foreach (Question quest in selectedItem.Questions)
             {

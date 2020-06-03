@@ -62,9 +62,7 @@ namespace testApplication.ViewModels
             Counter = 0;
             Points = 0;
             TestListFromDatabase = new ObservableCollection<Test>();
-            //QuestionList = new List<Question>();
 
-            //CurrentTestQuestions = new ObservableCollection<Question>();
             CurrentlyQuestion = new Question();
             if(QuestionList?.Count > 0)
             {
@@ -80,7 +78,7 @@ namespace testApplication.ViewModels
             if (Counter < QuestionList.Count)
             {
                 CurrentlyQuestion = QuestionList[Counter];
-                NumberOfCurrentlyQuestion = "Fråga nr: " + (Counter + 1) + " / " + QuestionList.Count; 
+                NumberOfCurrentlyQuestion = "Fråga nr: " + (Counter + 1) + " / " + QuestionList.Count;
                 RaisePropertyChanged(nameof(CurrentlyQuestion));
                 RaisePropertyChanged(nameof(NumberOfCurrentlyQuestion));
                 Counter++;
