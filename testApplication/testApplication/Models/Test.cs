@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace testApplication.Model
+namespace testApplication.Models
 {
     public class Test
     {

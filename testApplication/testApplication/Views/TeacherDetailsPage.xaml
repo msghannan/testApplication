@@ -19,31 +19,29 @@
 
             <Grid x:Name="TeacherDetailsGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
 
-                <!--<ListView x:Name="SignedInPersonListView" ScrollViewer.VerticalScrollBarVisibility="Hidden" ItemsSource="{x:Bind teacherViewModel.Person}" SelectionMode="None">
+                <ListView x:Name="SignedInPersonListView" ScrollViewer.VerticalScrollBarVisibility="Hidden" ItemsSource="{x:Bind teacherViewModel.Person}" Margin="71,117,454,94">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Person">
                             
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
 
-                                <TextBlock x:Name="CurrentFirstNameTextBlock" Text="{x:Bind FirstName}" HorizontalAlignment="Left" Margin="70,117,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
-                                <TextBlock x:Name="CurrentLastNameTextBlock" Text="{x:Bind LastName}" HorizontalAlignment="Left" Margin="70,203,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
-                                <TextBlock x:Name="CurrentEmailNameTextBlock" Text="{x:Bind Email}" HorizontalAlignment="Left" Margin="70,283,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
-                                <TextBlock x:Name="CurrentPhoneTextBlock" Text="{x:Bind Phone}" HorizontalAlignment="Left" Margin="70,360,0,0" VerticalAlignment="Top" Height="49" Width="290"/>
-
-
-                                <TextBox HorizontalAlignment="Left" Margin="408,117,0,0" PlaceholderText="Förnamn" VerticalAlignment="Top" Height="49" Width="290"/>
-                                <TextBox HorizontalAlignment="Left" Margin="408,203,0,0" PlaceholderText="Efternamn" VerticalAlignment="Top" Height="49" Width="290"/>
-                                <TextBox HorizontalAlignment="Left" Margin="408,283,0,0" PlaceholderText="Email"  VerticalAlignment="Top" Height="49" Width="290"/>
-                                <TextBox HorizontalAlignment="Left" Margin="408,360,0,0" PlaceholderText="Tel.nr" VerticalAlignment="Top" Height="49" Width="290"/>
-                                
+                                <TextBlock x:Name="CurrentFirstNameTextBlock" Text="{x:Bind FirstName}" FontSize="25" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="290"/>
+                                <TextBlock x:Name="CurrentLastNameTextBlock" Text="{x:Bind LastName}" FontSize="25" Margin="0,20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="290"/>
+                                <TextBlock x:Name="CurrentEmailNameTextBlock" Text="{x:Bind Email}" FontSize="25" Margin="0,20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="290"/>
+                                <TextBlock x:Name="CurrentPhoneTextBlock" Text="{x:Bind Phone}" FontSize="25" Margin="0,20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="49" Width="290"/>
+ 
                             </StackPanel>
+
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                </ListView>-->
+                </ListView>
+
+                <TextBox HorizontalAlignment="Left" Margin="408,117,0,0" PlaceholderText="Förnamn" VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBox HorizontalAlignment="Left" Margin="408,203,0,0" PlaceholderText="Efternamn" VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBox HorizontalAlignment="Left" Margin="408,283,0,0" PlaceholderText="Email"  VerticalAlignment="Top" Height="49" Width="290"/>
+                <TextBox HorizontalAlignment="Left" Margin="408,360,0,0" PlaceholderText="Tel.nr" VerticalAlignment="Top" Height="49" Width="290"/>
 
             </Grid>
-
-
 
 
 

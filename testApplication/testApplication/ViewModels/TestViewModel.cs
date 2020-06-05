@@ -10,7 +10,6 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using testApplication.Model;
 using testApplication.Models;
 
 namespace testApplication.ViewModels
@@ -19,6 +18,8 @@ namespace testApplication.ViewModels
     {
 
         public ObservableCollection<Question> QuestionList = new ObservableCollection<Question>();
+
+        public ObservableCollection<ExamHistoryViewModel> ListOfStudentResults = new ObservableCollection<ExamHistoryViewModel>();
 
         public ICommand NextBtnCmd { get; set; }
 

@@ -7,7 +7,6 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-using testApplication.Model;
 using testApplication.ViewModels;
 
 namespace testApplication.Models
@@ -114,18 +113,13 @@ namespace testApplication.Models
             return tests;
         }
 
-        public async void GetStudentsResults()
+        public async Task<ObservableCollection<ExamHistoryViewModel>> GetStudentsResults()
         {
-            StudentsResultsViewModel studentsResultsViewModel = new StudentsResultsViewModel();
+            var studentsResults = await httpClient.GetStringAsync(urlGetStudentsResults);
 
-            var jsonGetStudentsResults = await httpClient.GetStringAsync(urlGetStudentsResults);
+            var results = JsonConvert.DeserializeObject<ObservableCollection<ExamHistoryViewModel>>(studentsResults);
 
-            var studentResults = JsonConvert.DeserializeObject<ObservableCollection<StudentsResults>>(jsonGetStudentsResults);
-
-            foreach (StudentsResults a in studentResults)
-            {
-                studentsResultsViewModel.StudentResultList.Add(a);
-            }
+            return results;
         }
 
         public async void PostStudentsResults(StudentsResults results)
