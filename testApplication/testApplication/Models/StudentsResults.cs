@@ -8,20 +8,18 @@ namespace testApplication.Models
 {
     public class StudentsResults
     {
-        public int ResultId { get; set; }
-        public string TestName { get; set; }
-        public string StudentFirstName { get; set; }
-        public string StudentLastName { get; set; }
+        public int Id { get; set; }
         public string Grade { get; set; }
+        public int PersonId { get; set; }
+        public int TestId { get; set; }
 
-        public StudentsResults(int resultId, string testName,string studentFirstName, string studentLastName, string grade)
-        {
-            this.ResultId = resultId;
-            this.TestName = testName;
-            this.StudentFirstName = studentFirstName;
-            this.StudentLastName = studentLastName;
-            this.Grade = grade;
-        }
+        //public StudentsResults(int Id, string grade, int personId, int testId)
+        //{
+        //    this.Id = Id;
+        //    this.Grade = grade;
+        //    this.PersonId = personId;
+        //    this.TestId = testId;
+        //}
 
         public StudentsResults()
         {

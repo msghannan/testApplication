@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using testApplication.Models;
 
-namespace testApplication.Model
+namespace testApplication.Models
 {
     public class Question
     {

@@ -129,6 +129,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentsResults.cs" />
     <Compile Include="Models\Teacher.cs" />
+    <Compile Include="ViewModels\ExamHistoryViewModel.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="Services\APIServices.cs" />
     <Compile Include="Models\Question.cs" />

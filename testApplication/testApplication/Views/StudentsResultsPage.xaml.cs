@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using testApplication.Models;
 using testApplication.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -25,6 +26,8 @@ namespace testApplication.Views
     {
         private StudentViewModel studentViewModel;
         private StudentsResultsViewModel studentsResultsViewModel;
+        private APIServices apiServices;
+        private TestViewModel testViewModel;
 
         public StudentsResultsPage()
         {
@@ -32,13 +35,11 @@ namespace testApplication.Views
 
             studentViewModel = new StudentViewModel();
             studentsResultsViewModel = new StudentsResultsViewModel();
+            apiServices = new APIServices();
+            testViewModel = new TestViewModel();
+
+            GetStudentsResults();
         }
-
-        private void StudentResultList_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
 
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +49,15 @@ namespace testApplication.Views
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));
+        }
+
+        public async void GetStudentsResults()
+        {
+            var studentsResults = await apiServices.GetStudentsResults();
+            foreach (ExamHistoryViewModel results in studentsResults)
+            {
+                testViewModel.ListOfStudentResults.Add(results);
+            }
         }
     }
 }
