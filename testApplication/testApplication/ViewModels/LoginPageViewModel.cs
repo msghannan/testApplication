@@ -17,7 +17,6 @@ namespace testApplication.ViewModels
 {
     public class LoginPageViewModel
     {
-        //public INavigationService _navigationService { get; set; }
         public string PasswordTxt { get; set; }
         public string UsernameTxt { get; set; }
 
@@ -25,12 +24,12 @@ namespace testApplication.ViewModels
 
         public LoginPageViewModel()
         {
-            //_navigationService = navigationService;
             btnLogin = new RelayCommand(LoginAsync);
         }
+
+        //Login fuktionen, här navigeras användaren till rätt sida beroende på om användaren är lärare eller elev
         private async void LoginAsync()
         {
-            //Login backend here
             APIServices _apiService = new APIServices();
             var p = await _apiService.LoginAsync(UsernameTxt, PasswordTxt);
             App.LoggedInUser = p;

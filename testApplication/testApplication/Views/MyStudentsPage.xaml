@@ -26,11 +26,10 @@
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Person">
 
-                            <StackPanel x:Name="MyStudentsStackPanel" Orientation="Horizontal">
+                            <StackPanel x:Name="MyStudentsStackPanel" Orientation="Vertical">
 
-                                <TextBlock x:Name="StudentFirstNameTextBlock" Text="{x:Bind FirstName}" FontSize="25" Foreground="Black"/>
-                                <TextBlock x:Name="StudentLastNameTextBlock" Text="{x:Bind LastName}" FontSize="25" Foreground="Black"/>
-                                <TextBlock x:Name="StudentEmailTextBlock" Text="{x:Bind Email}" FontSize="25" Foreground="Black"/>
+                                <TextBlock x:Name="StudentFirstNameTextBlock" Text="{x:Bind Summury}" FontSize="20" Foreground="Black"/>
+                                
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

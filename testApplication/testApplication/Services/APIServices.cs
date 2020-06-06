@@ -2,10 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using testApplication.ViewModels;
 
@@ -17,7 +15,6 @@ namespace testApplication.Models
         static HttpClient httpClient = new HttpClient();
         private static string PostUrl = "https://localhost:44363/api/Tests";
         private static string urlGetStudentsResults = "https://localhost:44363/api/StudentsResults";
-        private static string GetTestUrl = "https://localhost:44363/api/Tests";
         private static string BaseUrl = "https://localhost:44363/api";
         private static string Accounts = "/Accounts";
         private static string PostQuestionUrl = "https://localhost:44363/api/Questions";
@@ -25,7 +22,7 @@ namespace testApplication.Models
         private static string PostStudentsResultsUrl = "https://localhost:44363/api/api/StudentsResults";
         private static string GetAllPeopleUrl = "https://localhost:44363/api/People";
 
-
+        //Login funktionen
         public async Task<Person> LoginAsync(string username, string password)
         {
             Account acc = new Account();
@@ -53,6 +50,8 @@ namespace testApplication.Models
             }
             return p;
         }
+
+        //Skapa test
         public async Task <Test> AddTestAsync(Test t)
         {
             using (HttpClient client = new HttpClient())
@@ -68,13 +67,11 @@ namespace testApplication.Models
             }
 
          }
+
+        //Lägga till fråga i test
         public async Task <Question> AddQuestonAsync(int a, List<Question> questionList)
         {
                 List<Question> q = questionList;
-                //for (int i = 0; i < questionList.Count; i++)
-                //{
-                //    q[i].TestID = a;
-                //}
 
                 var quest = JsonConvert.SerializeObject(q);
                 HttpContent httpContent = new StringContent(quest);
@@ -87,6 +84,8 @@ namespace testApplication.Models
                 return JsonConvert.DeserializeObject<Question>(p);
 
         }
+
+        //Lägga till svarsallternativ i frågorna
         public async Task AddAnswerAsync(int a, List<Answer> answerList)
         {
             List<Answer> l = answerList;
@@ -101,6 +100,7 @@ namespace testApplication.Models
             await httpClient.PostAsync(PostAnswerUrl, httpContent);
         }
 
+        //Hämta alla aktiva prov
         public async Task<ObservableCollection<Test>> GetAllExamsAsync()
         {
             var jsonTests = await httpClient.GetStringAsync(BaseUrl + "/Tests");
@@ -113,6 +113,7 @@ namespace testApplication.Models
             return tests;
         }
 
+        //Hämta elevernas resultat
         public async Task<ObservableCollection<ExamHistoryViewModel>> GetStudentsResults()
         {
             var studentsResults = await httpClient.GetStringAsync(urlGetStudentsResults);
@@ -122,6 +123,7 @@ namespace testApplication.Models
             return results;
         }
 
+        //Skicka elevernas resultat
         public async void PostStudentsResults(StudentsResults results)
         {
             var result = JsonConvert.SerializeObject(results);
@@ -130,6 +132,8 @@ namespace testApplication.Models
 
             await httpClient.PostAsync(PostStudentsResultsUrl, httpContent);
         }
+
+        //Hämta alla elever
         public async Task<ObservableCollection<Person>> GetAllStudents()
         {
             char student = 'S';
@@ -148,6 +152,8 @@ namespace testApplication.Models
             }
             return templist;
         }
+
+        //Hämta alla lärare
         public async Task<ObservableCollection<Person>> GetAllTeachers()
         {
             char teacher = 'T';
