@@ -44,13 +44,13 @@ namespace testApplication.ViewModels
         }
         public TestViewModel()
         {
+            CurrentlyQuestion = new Question();
             NextBtnCmd = new RelayCommand(NextQuestion);
-            Counter = 0;
+            Counter = 1;
             Points = 0;
             TestListFromDatabase = new ObservableCollection<Test>();
 
-            CurrentlyQuestion = new Question();
-            if(QuestionList?.Count > 0)
+            if(QuestionList.Count > 1)
             {
                 CurrentlyQuestion = QuestionList[Counter];
                 NumberOfCurrentlyQuestion = "Fråga nr: " + (Counter + 1) + " / " + QuestionList.Count;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace testApplication.Models
 {
-   public class Person
+    public class Person
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -16,5 +16,7 @@ namespace testApplication.Models
         public char Title { get; set; }
         public Account Account { get; set; }
         public Role Role { get; set; }
+        public string Summary
+        { get { return "Namn: " + FirstName + " " + LastName + " Mail: " + Email; } }
     }
 }
