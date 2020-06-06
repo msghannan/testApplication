@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Net.Http;
+using System.Threading.Tasks;
 using testApplication.Models;
 
 namespace testApplication.ViewModels
@@ -7,13 +8,23 @@ namespace testApplication.ViewModels
     public class StudentViewModel
     {
         HttpClient httpClient;
+        APIServices APIServices;
+        private ObservableCollection<Person> _studentlist;
 
         public ObservableCollection<Person> Person { get; set; }
-
-        public ObservableCollection<Student> StudentList { get; set; }
+        public ObservableCollection<Person> StudentList { get 
+            {
+                
+                 _studentlist = Task.Run(async () => await APIServices.GetAllStudents()).GetAwaiter().GetResult();
+                
+                return _studentlist;
+            }
+            set { } }
 
         public StudentViewModel()
         {
+            APIServices = new APIServices();
+            _studentlist = new ObservableCollection<Person>();
             httpClient = new HttpClient();
             Person = new ObservableCollection<Person>();
             Person.Add(App.LoggedInUser); 

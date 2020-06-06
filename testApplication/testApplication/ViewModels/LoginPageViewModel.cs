@@ -21,7 +21,6 @@ namespace testApplication.ViewModels
         public string PasswordTxt { get; set; }
         public string UsernameTxt { get; set; }
 
-
         public ICommand btnLogin{ get; set; }
 
         public LoginPageViewModel()
@@ -29,7 +28,6 @@ namespace testApplication.ViewModels
             //_navigationService = navigationService;
             btnLogin = new RelayCommand(LoginAsync);
         }
-
         private async void LoginAsync()
         {
             //Login backend here

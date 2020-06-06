@@ -24,19 +24,15 @@ namespace testApplication.Views
     public sealed partial class MyStudentsPage : Page
     {
         private StudentViewModel studentViewModel;
-
         public MyStudentsPage()
         {
             this.InitializeComponent();
-
             studentViewModel = new StudentViewModel();
         }
-
         private void GoBackButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.GoBack();
         }
-
         private void SignOutButton_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(MainPage));

@@ -21,7 +21,7 @@
 
 
         <Grid x:Name="MyTeacherPageGrid" Width="816" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="96,163,0,0">
-            <!--<ListView x:Name="MyTeachersListView" ItemsSource="{x:Bind vm}">
+            <ListView x:Name="MyTeachersListView" ItemsSource="{x:Bind teacherViewModel.TeacherList, Mode=TwoWay}">
                     <ListView.ItemTemplate>
                         <DataTemplate x:DataType="data:Person">
 
@@ -34,7 +34,7 @@
 
                     </DataTemplate>
                     </ListView.ItemTemplate>
-            </ListView>-->
+            </ListView>
         </Grid>
 
 

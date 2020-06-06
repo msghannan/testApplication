@@ -23,7 +23,7 @@ namespace testApplication.Models
         private static string PostQuestionUrl = "https://localhost:44363/api/Questions";
         private static string PostAnswerUrl = "https://localhost:44363/api/Answers";
         private static string PostStudentsResultsUrl = "https://localhost:44363/api/api/StudentsResults";
-
+        private static string GetAllPeopleUrl = "https://localhost:44363/api/People";
 
 
         public async Task<Person> LoginAsync(string username, string password)
@@ -130,6 +130,41 @@ namespace testApplication.Models
 
             await httpClient.PostAsync(PostStudentsResultsUrl, httpContent);
         }
+        public async Task<ObservableCollection<Person>> GetAllStudents()
+        {
+            char student = 'S';
+            var people = await httpClient.GetStringAsync(GetAllPeopleUrl);
 
+            var allPeople = JsonConvert.DeserializeObject<ObservableCollection<Person>>(people);
+
+            ObservableCollection<Person> templist = new ObservableCollection<Person>();
+
+            foreach (Person p in allPeople)
+            {
+                if (p.Title == student)
+                {
+                    templist.Add(p);
+                }
+            }
+            return templist;
+        }
+        public async Task<ObservableCollection<Person>> GetAllTeachers()
+        {
+            char teacher = 'T';
+            var people = await httpClient.GetStringAsync(GetAllPeopleUrl);
+
+            var allPeople = JsonConvert.DeserializeObject<ObservableCollection<Person>>(people);
+
+            ObservableCollection<Person> templist = new ObservableCollection<Person>();
+
+            foreach (Person p in allPeople)
+            {
+                if (p.Title == teacher)
+                {
+                    templist.Add(p);
+                }
+            }
+            return templist;
+        }
     }
 }

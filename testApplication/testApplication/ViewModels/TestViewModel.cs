@@ -16,47 +16,32 @@ namespace testApplication.ViewModels
 {
     public class TestViewModel : ViewModelBase
     {
-
         public ObservableCollection<Question> QuestionList = new ObservableCollection<Question>();
-
         public ObservableCollection<ExamHistoryViewModel> ListOfStudentResults = new ObservableCollection<ExamHistoryViewModel>();
 
         public ICommand NextBtnCmd { get; set; }
-
         public bool Answer1IsChecked { get; set; }
         public bool Answer2IsChecked { get; set; }
         public bool Answer3IsChecked { get; set; }
         public bool Answer4IsChecked { get; set; }
-
-
-
         public int Counter { get; set; }
-
         public int Points { get; set; }
-
         public string _numberOfCurrentlyQuestion { get; set; }
         public string NumberOfCurrentlyQuestion
+
         {
             get { return _numberOfCurrentlyQuestion;  }
             set { _numberOfCurrentlyQuestion = value; }
         }
-
-
         public List<Test> Test = new List<Test>();
         public List<Answer> AnswerList = new List<Answer>();
-
-
         public ObservableCollection<Test> TestListFromDatabase { get; set; }
-
-
         public Question _CurrentlyQuestion { get; set; }
         public Question CurrentlyQuestion
         {
             get { return _CurrentlyQuestion; }
             set { _CurrentlyQuestion = value; }
         }
-
-
         public TestViewModel()
         {
             NextBtnCmd = new RelayCommand(NextQuestion);
@@ -72,7 +57,6 @@ namespace testApplication.ViewModels
                 RaisePropertyChanged(nameof(NumberOfCurrentlyQuestion));
             }
         }
-
         private void NextQuestion()
         {
             CalculatePoints();
@@ -85,7 +69,6 @@ namespace testApplication.ViewModels
                 Counter++;
             }
         }
-
         private void CalculatePoints()
         {
             int dividePoint = CurrentlyQuestion.Answers.Where(x => x.CorrectAnswer == true).Count();

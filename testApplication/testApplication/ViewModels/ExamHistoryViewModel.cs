@@ -8,7 +8,6 @@ namespace testApplication.ViewModels
         public string Grade { get; set; }
         public Person Person { get; set; }
         public Test Test { get; set; }
-
         public string Summury
         {
             get
