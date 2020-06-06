@@ -57,6 +57,8 @@ namespace testApplication.ViewModels
                 RaisePropertyChanged(nameof(NumberOfCurrentlyQuestion));
             }
         }
+
+        //Funktionen bakom knappen (nästa fråga) när eleven svarar på provets frågor
         private void NextQuestion()
         {
             CalculatePoints();
@@ -69,6 +71,8 @@ namespace testApplication.ViewModels
                 Counter++;
             }
         }
+
+        //Räknar elevens poäng
         private void CalculatePoints()
         {
             int dividePoint = CurrentlyQuestion.Answers.Where(x => x.CorrectAnswer == true).Count();

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace testApplication.Models
+﻿namespace testApplication.Models
 {
    public class Person
     {
@@ -16,5 +10,13 @@ namespace testApplication.Models
         public char Title { get; set; }
         public Account Account { get; set; }
         public Role Role { get; set; }
+
+        public string Summury
+        {
+            get
+            {
+                return " Förnamn: " + FirstName + ", Efternamn: " + LastName + ", Email: " + Email + ", Tel.nr: " + Phone;
+            }
+        }
     }
 }

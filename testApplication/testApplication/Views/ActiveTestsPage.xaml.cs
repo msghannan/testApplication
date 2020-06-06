@@ -44,8 +44,6 @@ namespace testApplication.Views
         {
             Test selectedItem = (Test) e.ClickedItem;
 
-            //writeTestPage.BringTestInfo(((Test)e.ClickedItem).TestName);
-
             foreach (Question quest in selectedItem.Questions)
             {
                 testViewModel.QuestionList.Add(quest);
