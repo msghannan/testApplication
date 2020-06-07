@@ -16,6 +16,7 @@ namespace testApplication.ViewModels
 {
     public class TestViewModel : ViewModelBase
     {
+    
         public ObservableCollection<Question> QuestionList = new ObservableCollection<Question>();
         public ObservableCollection<ExamHistoryViewModel> ListOfStudentResults = new ObservableCollection<ExamHistoryViewModel>();
 
@@ -44,6 +45,7 @@ namespace testApplication.ViewModels
         }
         public TestViewModel()
         {
+           
             NextBtnCmd = new RelayCommand(NextQuestion);
             Counter = 0;
             Points = 0;
@@ -93,6 +95,10 @@ namespace testApplication.ViewModels
             {
                 Points += (CurrentlyQuestion.QuestionPoint / dividePoint);
             }
+        }
+        internal void RemoveTest(Test test)
+        {
+            TestListFromDatabase.Remove(test);
         }
     }
 }
