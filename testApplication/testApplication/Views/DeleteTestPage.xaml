@@ -22,10 +22,10 @@
                 <ListView x:Name="Test" ItemsSource="{x:Bind testViewModel.TestListFromDatabase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
                     <ListView.ItemTemplate  >
                         <DataTemplate x:DataType="data:Test">
-                            <StackPanel HorizontalAlignment="Right">
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                                 <StackPanel>
 
-                                    <TextBlock FontSize="16" Text="{x:Bind TestName}"></TextBlock >
+                                    <TextBlock x:Name="TestNameTextBlock" FontSize="25" Text="{x:Bind Summury}"/>
 
                                 </StackPanel>
 
@@ -50,7 +50,7 @@
             <Grid x:Name="PersonInfoGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
                 <Button x:Name="SignOutButton" Content="Logga ut!" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,330,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
                 <Button x:Name="GoBackButton" Content="Tillbaka" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="GoBackButton_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="Delete" Content="Ta bort" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,10,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="Delete_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="Delete" Content="Ta bort prov" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,251,0,0" VerticalAlignment="Top" Height="70" Width="165" Click="Delete_Click" HorizontalAlignment="Center"/>
             </Grid>
 
         </Grid>

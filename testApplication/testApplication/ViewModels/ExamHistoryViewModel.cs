@@ -12,7 +12,7 @@ namespace testApplication.ViewModels
         {
             get
             {
-               return "Elevens ID: " + Id + ", Namn: " + Person.FirstName + ", " + Person.LastName + ", Prov: " + Test.TestName + ", Betyg: " + Grade; 
+               return "Elevens ID: " + Person.Id + ", Namn: " + Person.FirstName + " " + Person.LastName + ", Prov: " + Test.TestName + ", Betyg: " + Grade; 
             }
         }
     }

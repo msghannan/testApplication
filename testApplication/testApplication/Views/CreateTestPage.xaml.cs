@@ -129,5 +129,17 @@ namespace testApplication.Views
             CreateNewTestMessageContentDialog c = new CreateNewTestMessageContentDialog();
             await c.ShowAsync();
         }
+
+        private async void DisplayNoWifiDialog()
+        {
+            ContentDialog noWifiDialog = new ContentDialog()
+            {
+                Title = "No wifi connection",
+                Content = "Check connection and try again.",
+                CloseButtonText = "Ok"
+            };
+
+            await noWifiDialog.ShowAsync();
+        }
     }
 }

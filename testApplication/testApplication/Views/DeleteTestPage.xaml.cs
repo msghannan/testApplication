@@ -52,9 +52,6 @@ namespace testApplication.Views
 
         private async void Delete_Click(object sender, RoutedEventArgs e)
          {
-          
-          
-    
             var select = Test.SelectedItems;
             foreach (Test test in select)
             {
@@ -64,9 +61,6 @@ namespace testApplication.Views
                 await aPIServices.DeleteTestAsync(test);
 
             }
-
-
-
         }
     }
 }

@@ -178,6 +178,9 @@
     <Compile Include="Views\WriteTestPage.xaml.cs">
       <DependentUpon>WriteTestPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\WriteTestPageContentDialog.xaml.cs">
+      <DependentUpon>WriteTestPageContentDialog.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -247,6 +250,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\WriteTestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WriteTestPageContentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

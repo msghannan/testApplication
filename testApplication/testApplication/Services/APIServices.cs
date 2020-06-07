@@ -162,19 +162,15 @@ namespace testApplication.Models
 
         public async Task DeleteTestAsync(Test test)
         {
-
             var httpClient = new System.Net.Http.HttpClient();
-
             await httpClient.DeleteAsync(DeleteUrl + test.ID);
-
         }
 
         public async Task<ObservableCollection<Test>> GetTestssAsync()
         {
-
             TestViewModel testViewModel = new TestViewModel();
-            var jasonOrder = await httpClient.GetStringAsync(DeleteUrl);
-            testViewModel.TestListFromDatabase = JsonConvert.DeserializeObject<ObservableCollection<Test>>(jasonOrder);
+            var jsonDeleteTest = await httpClient.GetStringAsync(DeleteUrl);
+            testViewModel.TestListFromDatabase = JsonConvert.DeserializeObject<ObservableCollection<Test>>(jsonDeleteTest);
             return testViewModel.TestListFromDatabase;
         }
     }
