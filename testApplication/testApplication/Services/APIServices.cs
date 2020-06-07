@@ -24,6 +24,8 @@ namespace testApplication.Models
         private static string PostAnswerUrl = "https://localhost:44363/api/Answers";
         private static string PostStudentsResultsUrl = "https://localhost:44363/api/api/StudentsResults";
         private static string GetAllPeopleUrl = "https://localhost:44363/api/People";
+        private static string DeleteUrl = "https://localhost:44363/api/tests/";
+
 
 
         public async Task<Person> LoginAsync(string username, string password)
@@ -165,6 +167,24 @@ namespace testApplication.Models
                 }
             }
             return templist;
+        }
+
+        public async Task DeleteTestAsync(Test test)
+        {
+
+            var httpClient = new System.Net.Http.HttpClient();
+
+            await httpClient.DeleteAsync(DeleteUrl + test.ID);
+
+        }
+
+        public async Task<ObservableCollection<Test>> GetTestssAsync()
+        {
+
+            TestViewModel testViewModel = new TestViewModel();
+            var jasonOrder = await httpClient.GetStringAsync(DeleteUrl);
+            testViewModel.TestListFromDatabase = JsonConvert.DeserializeObject<ObservableCollection<Test>>(jasonOrder);
+            return testViewModel.TestListFromDatabase;
         }
     }
 }
