@@ -21,6 +21,7 @@ namespace testApplication.ViewModels
         public ObservableCollection<ExamHistoryViewModel> ListOfStudentResults = new ObservableCollection<ExamHistoryViewModel>();
 
         public ICommand NextBtnCmd { get; set; }
+        public ICommand FinishExamCmd { get; set; }
         public bool Answer1IsChecked { get; set; }
         public bool Answer2IsChecked { get; set; }
         public bool Answer3IsChecked { get; set; }
@@ -34,7 +35,7 @@ namespace testApplication.ViewModels
             get { return _numberOfCurrentlyQuestion;  }
             set { _numberOfCurrentlyQuestion = value; }
         }
-        public List<Test> Test = new List<Test>();
+        public Test CurrentlyExam = new Test();
         public List<Answer> AnswerList = new List<Answer>();
         public ObservableCollection<Test> TestListFromDatabase { get; set; }
         public Question _CurrentlyQuestion { get; set; }
@@ -47,7 +48,8 @@ namespace testApplication.ViewModels
         {
            
             NextBtnCmd = new RelayCommand(NextQuestion);
-            Counter = 0;
+            FinishExamCmd = new RelayCommand(FinishExam);
+            Counter = 1;
             Points = 0;
             TestListFromDatabase = new ObservableCollection<Test>();
 
@@ -60,17 +62,52 @@ namespace testApplication.ViewModels
             }
         }
 
+        private void FinishExam()
+        {
+            APIServices api = new APIServices();
+            CalculatePoints();
+            double a = Points;
+            string grade;
+
+
+            if((a / CurrentlyExam.MaxPoints) > 0.75)
+            {
+                grade = "Väl Godkänd";
+            }
+            else if ((a / CurrentlyExam.MaxPoints) > 0.5)
+            {
+                grade = "Godkänd";
+            }
+            else
+            {
+                grade = "Icke Godkänd";
+            }
+
+
+            api.PostStudentsResults(new StudentsResults()
+            {
+                Grade = grade,
+                TestId = CurrentlyExam.ID,
+                PersonId = App.LoggedInUser.Id
+            });
+        }
+
         //Funktionen bakom knappen (nästa fråga) när eleven svarar på provets frågor
         private void NextQuestion()
         {
-            CalculatePoints();
+
             if (Counter < QuestionList.Count)
             {
+                CalculatePoints();
                 CurrentlyQuestion = QuestionList[Counter];
                 NumberOfCurrentlyQuestion = "Fråga nr: " + (Counter + 1) + " / " + QuestionList.Count;
                 RaisePropertyChanged(nameof(CurrentlyQuestion));
                 RaisePropertyChanged(nameof(NumberOfCurrentlyQuestion));
                 Counter++;
+            }
+            else
+            {
+                FinishExam();
             }
         }
 

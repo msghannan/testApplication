@@ -19,7 +19,7 @@ namespace testApplication.Models
         private static string Accounts = "/Accounts";
         private static string PostQuestionUrl = "https://localhost:44363/api/Questions";
         private static string PostAnswerUrl = "https://localhost:44363/api/Answers";
-        private static string PostStudentsResultsUrl = "https://localhost:44363/api/api/StudentsResults";
+        private static string PostStudentsResultsUrl = "https://localhost:44363/api/StudentsResults";
         private static string GetAllPeopleUrl = "https://localhost:44363/api/People";
         private static string DeleteUrl = "https://localhost:44363/api/tests/";
 
@@ -87,21 +87,6 @@ namespace testApplication.Models
 
         }
 
-        //Lägga till svarsallternativ i frågorna
-        public async Task AddAnswerAsync(int a, List<Answer> answerList)
-        {
-            List<Answer> l = answerList;
-            for (int i = 0; i < answerList.Count; i++)
-            {
-                l[i].QuestionId = a;
-            }
-
-            var ans = JsonConvert.SerializeObject(answerList);
-            HttpContent httpContent = new StringContent(ans);
-            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            await httpClient.PostAsync(PostAnswerUrl, httpContent);
-        }
-
         //Hämta alla aktiva prov
         public async Task<ObservableCollection<Test>> GetAllExamsAsync()
         {
@@ -132,7 +117,7 @@ namespace testApplication.Models
             HttpContent httpContent = new StringContent(result);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            await httpClient.PostAsync(PostStudentsResultsUrl, httpContent);
+            var responseStatus = await httpClient.PostAsync(PostStudentsResultsUrl, httpContent);
         }
 
         //Hämta alla elever

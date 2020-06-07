@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:testApplication.Views"
-    xmlns:data="using:testApplication.Model"
+    xmlns:data="using:testApplication.Models"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -36,7 +36,7 @@
         
 
         <Grid x:Name="SideGrid" BorderBrush="Black" BorderThickness="5" Width="249" Height="503" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="946,163,0,0" Grid.Column="1">
-            <Button x:Name="SendTestButton" Content="Lämna in!" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,252,0,0" Click="SendTestButton_Click"/>
+            <Button x:Name="SendTestButton" Content="Lämna in!" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Height="70" Width="165" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,252,0,0" Command="{x:Bind testViewModel.FinishExamCmd}" />
             <Button x:Name="NextBtn" Content="Nästa Fråga" FontSize="20" Style="{StaticResource RoundButtontamplate}" BorderBrush="Black" Background="#3ab487" Margin="0,330,0,0" Height="70" Width="165" VerticalAlignment="Top" HorizontalAlignment="Center" Command="{x:Bind testViewModel.NextBtnCmd}" />
             <Button x:Name="SignOutButton" Content="Logga ut" FontSize="25" Style="{StaticResource RoundButtontamplate}" Background="#d30000" Margin="0,404,0,0" VerticalAlignment="Top" Height="70" Width="165" HorizontalAlignment="Center" Click="SignOutButton_Click"/>
             <TextBlock x:Name="CurrentQuestionNumber"  Text="{x:Bind testViewModel.NumberOfCurrentlyQuestion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  FontSize="25" Margin="5,5,5,414" />

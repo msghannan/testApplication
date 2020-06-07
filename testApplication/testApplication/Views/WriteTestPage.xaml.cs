@@ -57,6 +57,7 @@ namespace testApplication.Views
             }
 
             testViewModel.CurrentlyQuestion = testViewModel.QuestionList[0];
+            testViewModel.CurrentlyExam= selectedItem;
         }
 
         private void SignOutButton_Click_1(object sender, RoutedEventArgs e)

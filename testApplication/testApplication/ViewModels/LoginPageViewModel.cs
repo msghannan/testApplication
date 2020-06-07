@@ -34,17 +34,20 @@ namespace testApplication.ViewModels
             var p = await _apiService.LoginAsync(UsernameTxt, PasswordTxt);
             App.LoggedInUser = p;
 
-            if(p.Role.Teacher == true)
+            if(p.Id > 0)
             {
-                var nav = ServiceLocator.Current.GetInstance<INavigationService>();
-                nav.NavigateTo(App.TeacherPage);
+                if (p.Role.Teacher == true)
+                {
+                    var nav = ServiceLocator.Current.GetInstance<INavigationService>();
+                    nav.NavigateTo(App.TeacherPage);
+                }
+                else if (p.Role.Student == true)
+                {
+                    var nav = ServiceLocator.Current.GetInstance<INavigationService>();
+                    nav.NavigateTo(App.StudentPage);
+                }
             }
-            else if(p.Role.Student == true)
-            {
-                var nav = ServiceLocator.Current.GetInstance<INavigationService>();
-                nav.NavigateTo(App.StudentPage);
-            }
-           
+
         }
     }
 }

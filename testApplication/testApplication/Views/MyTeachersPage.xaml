@@ -27,7 +27,7 @@
 
                         <StackPanel x:Name="MyTeachersStackPanel" Orientation="Horizontal">
 
-                            <TextBlock x:Name="TeacherFirstNameTextBlock" Text="{x:Bind Summury}" FontSize="20" Foreground="Black"/>
+                            <TextBlock x:Name="TeacherFirstNameTextBlock" Text="{x:Bind Summary}" FontSize="20" Foreground="Black"/>
                             
                         </StackPanel>
 

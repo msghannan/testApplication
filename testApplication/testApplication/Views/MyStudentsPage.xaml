@@ -28,7 +28,7 @@
 
                             <StackPanel x:Name="MyStudentsStackPanel" Orientation="Vertical">
 
-                                <TextBlock x:Name="StudentFirstNameTextBlock" Text="{x:Bind Summury}" FontSize="20" Foreground="Black"/>
+                                <TextBlock x:Name="StudentFirstNameTextBlock" Text="{x:Bind Summary}" FontSize="20" Foreground="Black"/>
                                 
                             </StackPanel>
                         </DataTemplate>
