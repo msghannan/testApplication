@@ -16,6 +16,7 @@ namespace testApplication.ViewModels
 {
     public class TestViewModel : ViewModelBase
     {
+    
         public ObservableCollection<Question> QuestionList = new ObservableCollection<Question>();
         public ObservableCollection<ExamHistoryViewModel> ListOfStudentResults = new ObservableCollection<ExamHistoryViewModel>();
 
@@ -44,19 +45,22 @@ namespace testApplication.ViewModels
         }
         public TestViewModel()
         {
-            CurrentlyQuestion = new Question();
+           
             NextBtnCmd = new RelayCommand(NextQuestion);
-            Counter = 1;
+            Counter = 0;
             Points = 0;
             TestListFromDatabase = new ObservableCollection<Test>();
 
-            if(QuestionList.Count > 1)
+            CurrentlyQuestion = new Question();
+            if(QuestionList?.Count > 0)
             {
                 CurrentlyQuestion = QuestionList[Counter];
                 NumberOfCurrentlyQuestion = "Fråga nr: " + (Counter + 1) + " / " + QuestionList.Count;
                 RaisePropertyChanged(nameof(NumberOfCurrentlyQuestion));
             }
         }
+
+        //Funktionen bakom knappen (nästa fråga) när eleven svarar på provets frågor
         private void NextQuestion()
         {
             CalculatePoints();
@@ -69,6 +73,8 @@ namespace testApplication.ViewModels
                 Counter++;
             }
         }
+
+        //Räknar elevens poäng
         private void CalculatePoints()
         {
             int dividePoint = CurrentlyQuestion.Answers.Where(x => x.CorrectAnswer == true).Count();
@@ -89,6 +95,10 @@ namespace testApplication.ViewModels
             {
                 Points += (CurrentlyQuestion.QuestionPoint / dividePoint);
             }
+        }
+        internal void RemoveTest(Test test)
+        {
+            TestListFromDatabase.Remove(test);
         }
     }
 }

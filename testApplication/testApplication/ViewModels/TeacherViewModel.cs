@@ -13,11 +13,13 @@ namespace testApplication.ViewModels
 
     public class TeacherViewModel
     {
-        APIServices APIServices;
-        private ObservableCollection<Person> _teacherlist;
         HttpClient httpClient;
+        APIServices APIServices;
 
+        private ObservableCollection<Person> _teacherlist;
         public ObservableCollection<Person> Person { get; set; }
+
+        //Listan hämtad från APIServices och fylls med alla lärare
         public ObservableCollection<Person> TeacherList
         {
             get
