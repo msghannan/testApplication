@@ -52,6 +52,7 @@ namespace testApplication.ViewModels
             Counter = 1;
             Points = 0;
             TestListFromDatabase = new ObservableCollection<Test>();
+            ListOfStudentResults = new ObservableCollection<ExamHistoryViewModel>();
 
             CurrentlyQuestion = new Question();
             if(QuestionList?.Count > 0)
@@ -90,6 +91,7 @@ namespace testApplication.ViewModels
                 TestId = CurrentlyExam.ID,
                 PersonId = App.LoggedInUser.Id
             });
+
         }
 
         //Funktionen bakom knappen (nästa fråga) när eleven svarar på provets frågor

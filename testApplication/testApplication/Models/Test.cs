@@ -15,6 +15,14 @@ namespace testApplication.Models
         {
             Questions = new List<Question>();
         }
-       
+
+        public string Summury
+        {
+            get
+            {
+                return "Prov: " + TestName + ", Max poäng: " + MaxPoints + ", Datum: " + Date;
+            }
+        }
+
     }
 }
